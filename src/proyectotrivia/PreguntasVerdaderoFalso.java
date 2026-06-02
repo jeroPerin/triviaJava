@@ -21,6 +21,22 @@ public class PreguntasVerdaderoFalso extends Preguntas {
         this.opcionBooleana = opcionBooleana;
         this.opcionCorrecta = opcionCorrecta;
     }
+
+    public boolean isOpcionBooleana() {
+        return opcionBooleana;
+    }
+
+    public void setOpcionBooleana(boolean opcionBooleana) {
+        this.opcionBooleana = opcionBooleana;
+    }
+
+    public boolean isOpcionCorrecta() {
+        return opcionCorrecta;
+    }
+
+    public void setOpcionCorrecta(boolean opcionCorrecta) {
+        this.opcionCorrecta = opcionCorrecta;
+    }
     
    
     

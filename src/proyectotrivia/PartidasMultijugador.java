@@ -26,6 +26,39 @@ public class PartidasMultijugador extends Partidas{
         this.idUsuario2 = idUsuario2;
         this.puntajeFinal2 = puntajeFinal2;
     }
+
+    public int getIdUsuario1() {
+        return idUsuario1;
+    }
+
+    public void setIdUsuario1(int idUsuario1) {
+        this.idUsuario1 = idUsuario1;
+    }
+
+    public int getPuntajeFinal1() {
+        return puntajeFinal1;
+    }
+
+    public void setPuntajeFinal1(int puntajeFinal1) {
+        this.puntajeFinal1 = puntajeFinal1;
+    }
+
+    public int getIdUsuario2() {
+        return idUsuario2;
+    }
+
+    public void setIdUsuario2(int idUsuario2) {
+        this.idUsuario2 = idUsuario2;
+    }
+
+    public int getPuntajeFinal2() {
+        return puntajeFinal2;
+    }
+
+    public void setPuntajeFinal2(int puntajeFinal2) {
+        this.puntajeFinal2 = puntajeFinal2;
+    }
+    
     
     
 }

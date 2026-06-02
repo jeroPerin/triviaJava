@@ -27,6 +27,22 @@ public class PartidasSolitario extends Partidas {
         this.puntajeFinal = puntajeFinal;
     }
 
+    public int getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
+    }
+
+    public int getPuntajeFinal() {
+        return puntajeFinal;
+    }
+
+    public void setPuntajeFinal(int puntajeFinal) {
+        this.puntajeFinal = puntajeFinal;
+    }
+
     
     
     
