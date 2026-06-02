@@ -13,8 +13,10 @@ public class ProyectoTrivia {
     /**
      * @param args the command line arguments
      */
+    
+    //holisssss
     public static void main(String[] args) {
-        // TODO code application logic here
+        
     }
     
 }
