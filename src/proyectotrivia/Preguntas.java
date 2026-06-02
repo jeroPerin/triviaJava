@@ -8,7 +8,7 @@ package proyectotrivia;
  *
  * @author JERO
  */
-public class Preguntas {
+abstract public class Preguntas {
     
     int idPregunta;
     int idCategoria;
@@ -67,6 +67,6 @@ public class Preguntas {
         this.dificultad = dificultad;
     }
     
-    
+   public abstract boolean verificarRespuesta();
     
 }

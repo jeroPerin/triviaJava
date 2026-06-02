@@ -8,7 +8,7 @@ package proyectotrivia;
  *
  * @author JERO
  */
-public class Partidas {
+abstract public class Partidas {
     
     int idPartida;
    // DateTime fecha;
@@ -37,6 +37,12 @@ public class Partidas {
     public void setFinalizada(boolean finalizada) {
         this.finalizada = finalizada;
     }
+    
+    /*iniciarPartida()
+finalizarPartida()
+calcularPuntaje()
+verificarRespuesta()
+siguientePregunta()*/
     
     
 }

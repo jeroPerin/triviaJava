@@ -67,5 +67,12 @@ public class PreguntasMultipleChoice extends Preguntas {
         this.opcionCorrecta = opcionCorrecta;
     }
     
+    //METODOS FUNCIONALIDADES
+     @Override
+    public boolean verificarRespuesta(){
+    
+    
+    return true;
+    }
     
 }

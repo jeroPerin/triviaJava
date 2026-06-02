@@ -38,6 +38,17 @@ public class PreguntasVerdaderoFalso extends Preguntas {
         this.opcionCorrecta = opcionCorrecta;
     }
     
-   
+   //METODOS FUNCIONALIDADES
+    
+    @Override
+    public boolean verificarRespuesta(){
+    
+    //if(respuestaJugador=opcionCorrecta)
+    return true;
+    //else
+      //  return false;
+    
+    }
+    
     
 }

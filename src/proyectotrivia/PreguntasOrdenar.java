@@ -67,5 +67,12 @@ public class PreguntasOrdenar extends Preguntas {
         this.ordenCorrecta = ordenCorrecta;
     }
     
+    //METODOS FUNCIONALIDADES
+     @Override
+    public boolean verificarRespuesta(){
+    
+    
+    return true;
+    }
     
 }

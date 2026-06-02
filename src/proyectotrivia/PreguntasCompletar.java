@@ -57,6 +57,13 @@ public class PreguntasCompletar extends Preguntas {
         this.dificultad = dificultad;
     }
  
+    //METODOS FUNCIONALIDADES
+     @Override
+    public boolean verificarRespuesta(){
+    
+    
+    return true;
+    }
     
     
 }

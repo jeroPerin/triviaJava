@@ -57,6 +57,12 @@ public class PreguntasAproximacion extends Preguntas {
         this.dificultad = dificultad;
     }
     
+    //METODOS FUNCIONALIDADES
+     @Override
+    public boolean verificarRespuesta(){
     
+    
+    return true;
+    }
     
 }
