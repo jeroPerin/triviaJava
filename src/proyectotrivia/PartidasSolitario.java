@@ -43,7 +43,11 @@ public class PartidasSolitario extends Partidas {
         this.puntajeFinal = puntajeFinal;
     }
 
-    
+    @Override
+    public void iniciarPartida(){};
+    public void finalizarPartida(){};
+    public void calcularPuntaje(){};
+    public void siguientePregunta(){};
     
     
 }
