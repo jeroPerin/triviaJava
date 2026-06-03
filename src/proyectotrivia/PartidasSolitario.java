@@ -44,7 +44,13 @@ public class PartidasSolitario extends Partidas {
     }
 
     @Override
-    public void iniciarPartida(){};
+    public void iniciarPartida(){
+    
+    
+    
+    
+    
+    };
     public void finalizarPartida(){};
     public void calcularPuntaje(){};
     public void siguientePregunta(){};
