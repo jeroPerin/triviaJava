@@ -69,9 +69,15 @@ public class PreguntasOrdenar extends Preguntas {
     
     //METODOS FUNCIONALIDADES
      @Override
-    public boolean verificarRespuesta(){
-    
-    
+    public boolean verificarRespuesta(String respuestaUsuario){
+            
+       /*SI LAS RESPUESTAS VIENEN EN UN STRING, HABRIA QUE
+       DEJAR CONCATENADO EL ORDEN CORRECTO EN
+        LA VARIABLE "ORDENCORRECTA" Y COMPARAR LOS STRINGS DIRECTAMENTE*/
+       
+        
+        
+        
     return true;
     }
     
