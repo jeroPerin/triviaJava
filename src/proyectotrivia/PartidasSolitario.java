@@ -45,9 +45,9 @@ public class PartidasSolitario extends Partidas {
 
     @Override
     public void iniciarPartida(){
-    
-    
-    
+   
+        //OBTENER PREGUNTAS
+        
     
     
     };
