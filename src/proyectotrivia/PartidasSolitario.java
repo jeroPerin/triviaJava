@@ -12,6 +12,9 @@ public class PartidasSolitario extends Partidas {
           
     int idUsuario;
     int puntajeFinal;
+    int indicePregunta;
+     Preguntas preguntasPartida;
+    Respuestas respuestasPartida;
 
     public PartidasSolitario() {
     }
@@ -47,13 +50,19 @@ public class PartidasSolitario extends Partidas {
     public void iniciarPartida(){
    
         //OBTENER PREGUNTAS
+        //select 10 preguntas from
         
+        //igualar preguntas
+        //select = for preguntas in preguntasPartida
     
     
     };
-    public void finalizarPartida(){};
-    public void calcularPuntaje(){};
-    public void siguientePregunta(){};
+    public void finalizarPartida(){
     
     
+    };
+    public void calcularPuntaje(){
+    
+    };
+    public void siguientePregunta(){}
 }
