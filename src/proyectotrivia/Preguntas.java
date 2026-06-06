@@ -67,6 +67,6 @@ abstract public class Preguntas {
         this.dificultad = dificultad;
     }
     
-   public abstract boolean verificarRespuesta();
+   public abstract boolean verificarRespuesta(String respuestaUsuario);
     
 }
