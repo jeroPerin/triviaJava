@@ -60,11 +60,11 @@ public class PartidasSolitario extends Partidas {
         try {
 
             Connection con = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/practicasqlgrafica",
+                    "jdbc:mysql://localhost:3306/triviaProyecto",
                     "root",
                     ""
             );
-        String sql = "SELECT * FROM preguntas ORDER BY RAND() LIMIT 5";
+        String sql = "SELECT * FROM preguntas p JOIN preguntas_vf v ON p.idPregunta = v.idPregunta ORDER BY RAND()LIMIT 5";
 
         Statement st = con.createStatement();
 
@@ -79,7 +79,7 @@ public class PartidasSolitario extends Partidas {
            int idCategoria = rs.getInt("idCategoria");
            int dificultad = rs.getInt("dificultad");
            String enunciado = rs.getString("enunciado");
-           int tipo = rs.getInt("tipoPregunta");
+           int tipo = rs.getInt("tipo");
 
            Preguntas p = new PreguntasVerdaderoFalso(op,idPregunta,idCategoria,enunciado,tipo,dificultad);
            //Guardamos la pregunta en el array 
