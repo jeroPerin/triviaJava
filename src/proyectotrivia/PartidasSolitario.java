@@ -3,6 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package proyectotrivia;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+import java.sql.ResultSet;
 
 /**
  *
@@ -13,8 +17,10 @@ public class PartidasSolitario extends Partidas {
     int idUsuario;
     int puntajeFinal;
     int indicePregunta;
-     Preguntas preguntasPartida;
-    Respuestas respuestasPartida;
+    Preguntas[] preguntasPartida = new PreguntasVerdaderoFalso[5] ;
+    Respuestas[] respuestasPartida = new Respuestas[5];
+    
+    
 
     public PartidasSolitario() {
     }
@@ -45,18 +51,57 @@ public class PartidasSolitario extends Partidas {
     public void setPuntajeFinal(int puntajeFinal) {
         this.puntajeFinal = puntajeFinal;
     }
+    
+    
 
     @Override
     public void iniciarPartida(){
    
-        //OBTENER PREGUNTAS
-        //select 10 preguntas from
+        try {
+
+            Connection con = DriverManager.getConnection(
+                    "jdbc:mysql://localhost:3306/practicasqlgrafica",
+                    "root",
+                    ""
+            );
+        String sql = "SELECT * FROM preguntas ORDER BY RAND() LIMIT 5";
+
+        Statement st = con.createStatement();
+
+        ResultSet rs = st.executeQuery(sql);
         
-        //igualar preguntas
-        //select = for preguntas in preguntasPartida
+        while(rs.next()){
+            //boolean opcionCorrecta, int idPregunta, int idCategoria, String enunciado, int tipoPregunta, int dificultad
+
+            //aca vendria el switch dependiendo el tipo de pregunta, por ahora solo VoF
+           boolean op = rs.getBoolean("opcionCorrecta");
+           int idPregunta = rs.getInt("idPregunta");
+           int idCategoria = rs.getInt("idCategoria");
+           int dificultad = rs.getInt("dificultad");
+           String enunciado = rs.getString("enunciado");
+           int tipo = rs.getInt("tipoPregunta");
+
+           Preguntas p = new PreguntasVerdaderoFalso(op,idPregunta,idCategoria,enunciado,tipo,dificultad);
+           //Guardamos la pregunta en el array 
+            for(int i =0;i<preguntasPartida.length;i++)
+                preguntasPartida[i] = p;
+        }
+        puntajeFinal=0;
+        indicePregunta=0;
+        
+        
+        
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+      
     
     
     };
+    
+    public void aumentarIndice(){ indicePregunta++;}
+    
     public void finalizarPartida(){
     
     
@@ -64,5 +109,10 @@ public class PartidasSolitario extends Partidas {
     public void calcularPuntaje(){
     
     };
-    public void siguientePregunta(){}
+    public Preguntas siguientePregunta(){
+        
+     return preguntasPartida[indicePregunta];
+        
+    
+    }
 }
