@@ -19,6 +19,10 @@ public class menuPregunta extends javax.swing.JFrame {
     public menuPregunta(Partidas partida) {
         initComponents();
         
+        panelVerdaderoFalso.setBounds(0, 0, 600, 200);
+        panelMultipleChoice.setBounds(0, 0, 600, 200);
+        panelCompletar.setBounds(0, 0, 600, 200);
+        
          p=partida;
         pregActual=p.siguientePregunta();
         System.out.println(pregActual);
