@@ -13,6 +13,8 @@ public class menuPregunta extends javax.swing.JFrame {
        private Partidas p;
        
        private Preguntas pregActual;
+       
+       private boolean respuestaCorrecta;
 
     public menuPregunta(Partidas partida) {
         initComponents();
@@ -28,13 +30,14 @@ public class menuPregunta extends javax.swing.JFrame {
     
     private void procesarRespuesta(String respuesta){
     
-        //verificar respuesta
-        System.out.println("RESPONDISTE");
-       pregActual= p.siguientePregunta();
+        respuestaCorrecta = pregActual.verificarRespuesta(respuesta);
+        if(respuestaCorrecta)
+            System.out.println("RESPONDISTE BIEN");
+        
+        pregActual= p.siguientePregunta();
         System.out.println(pregActual);
       
         mostrarPregunta();
-        
         
     }
     
@@ -88,6 +91,7 @@ public class menuPregunta extends javax.swing.JFrame {
         panelCompletar = new javax.swing.JPanel();
         txtCompletar = new javax.swing.JTextField();
         lblCompletar = new javax.swing.JLabel();
+        btnCompletar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -117,6 +121,14 @@ public class menuPregunta extends javax.swing.JFrame {
                     .addComponent(btnVerdadero))
                 .addGap(31, 31, 31))
         );
+
+        opcion3MultipleChoice.addActionListener(this::opcion3MultipleChoiceActionPerformed);
+
+        opcion1MultipleChoice.addActionListener(this::opcion1MultipleChoiceActionPerformed);
+
+        opcion2MultipleChoice.addActionListener(this::opcion2MultipleChoiceActionPerformed);
+
+        opcion4MultipleChoice.addActionListener(this::opcion4MultipleChoiceActionPerformed);
 
         javax.swing.GroupLayout panelMultipleChoiceLayout = new javax.swing.GroupLayout(panelMultipleChoice);
         panelMultipleChoice.setLayout(panelMultipleChoiceLayout);
@@ -154,15 +166,23 @@ public class menuPregunta extends javax.swing.JFrame {
 
         lblCompletar.setText("Completa:");
 
+        btnCompletar.setText("RESPONDER");
+        btnCompletar.addActionListener(this::btnCompletarActionPerformed);
+
         javax.swing.GroupLayout panelCompletarLayout = new javax.swing.GroupLayout(panelCompletar);
         panelCompletar.setLayout(panelCompletarLayout);
         panelCompletarLayout.setHorizontalGroup(
             panelCompletarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCompletarLayout.createSequentialGroup()
-                .addGap(52, 52, 52)
-                .addComponent(lblCompletar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
-                .addComponent(txtCompletar, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(panelCompletarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(panelCompletarLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnCompletar))
+                    .addGroup(panelCompletarLayout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addComponent(lblCompletar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
+                        .addComponent(txtCompletar, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(14, 14, 14))
         );
         panelCompletarLayout.setVerticalGroup(
@@ -170,9 +190,11 @@ public class menuPregunta extends javax.swing.JFrame {
             .addGroup(panelCompletarLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panelCompletarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtCompletar, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCompletar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblCompletar))
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnCompletar, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -202,9 +224,9 @@ public class menuPregunta extends javax.swing.JFrame {
                 .addGap(17, 17, 17)
                 .addComponent(lblPregunta, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(panelMultipleChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(panelCompletar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(panelMultipleChoice, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(panelCompletar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(panelVerdaderoFalso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20))
@@ -221,12 +243,38 @@ public class menuPregunta extends javax.swing.JFrame {
        procesarRespuesta("FALSE");
     }//GEN-LAST:event_btnFalsoActionPerformed
 
+    private void opcion1MultipleChoiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcion1MultipleChoiceActionPerformed
+        // TODO add your handling code here:
+        procesarRespuesta(opcion1MultipleChoice.getText());
+    }//GEN-LAST:event_opcion1MultipleChoiceActionPerformed
+
+    private void opcion2MultipleChoiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcion2MultipleChoiceActionPerformed
+        // TODO add your handling code here:
+        procesarRespuesta(opcion2MultipleChoice.getText());
+    }//GEN-LAST:event_opcion2MultipleChoiceActionPerformed
+
+    private void opcion3MultipleChoiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcion3MultipleChoiceActionPerformed
+        // TODO add your handling code here:
+        procesarRespuesta(opcion3MultipleChoice.getText());
+    }//GEN-LAST:event_opcion3MultipleChoiceActionPerformed
+
+    private void opcion4MultipleChoiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcion4MultipleChoiceActionPerformed
+        // TODO add your handling code here:
+        procesarRespuesta(opcion4MultipleChoice.getText());
+    }//GEN-LAST:event_opcion4MultipleChoiceActionPerformed
+
+    private void btnCompletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCompletarActionPerformed
+        // TODO add your handling code here:
+        procesarRespuesta(txtCompletar.getText());
+    }//GEN-LAST:event_btnCompletarActionPerformed
+
     /**
      * @param args the command line arguments
      */
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCompletar;
     private javax.swing.JButton btnFalso;
     private javax.swing.JButton btnVerdadero;
     private javax.swing.JLabel lblCompletar;

@@ -52,9 +52,9 @@
               <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
               <Component id="lblPregunta" min="-2" pref="67" max="-2" attributes="0"/>
               <EmptySpace pref="64" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="panelMultipleChoice" min="-2" max="-2" attributes="0"/>
-                  <Component id="panelCompletar" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="panelMultipleChoice" max="32767" attributes="0"/>
+                  <Component id="panelCompletar" max="32767" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="panelVerdaderoFalso" min="-2" max="-2" attributes="0"/>
@@ -160,12 +160,24 @@
       </Layout>
       <SubComponents>
         <Component class="javax.swing.JButton" name="opcion3MultipleChoice">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="opcion3MultipleChoiceActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="opcion1MultipleChoice">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="opcion1MultipleChoiceActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="opcion2MultipleChoice">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="opcion2MultipleChoiceActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="opcion4MultipleChoice">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="opcion4MultipleChoiceActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -175,10 +187,18 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
-                  <Component id="lblCompletar" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="81" max="32767" attributes="0"/>
-                  <Component id="txtCompletar" min="-2" pref="207" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="btnCompletar" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+                          <Component id="lblCompletar" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="81" max="32767" attributes="0"/>
+                          <Component id="txtCompletar" min="-2" pref="207" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
                   <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -188,10 +208,12 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="txtCompletar" alignment="3" min="-2" pref="78" max="-2" attributes="0"/>
+                      <Component id="txtCompletar" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                       <Component id="lblCompletar" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="16" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="btnCompletar" min="-2" pref="21" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -203,6 +225,14 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Completa:"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnCompletar">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="RESPONDER"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCompletarActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
