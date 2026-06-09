@@ -137,6 +137,25 @@ public class PartidasSolitario extends Partidas {
                     }
 
                     break;
+                    
+                    case 3: // Completar
+
+                    Statement stCom = con.createStatement();
+
+                    String sqlCom =  "SELECT * FROM preguntasCompletar " + "WHERE idPregunta = " + idPregunta;
+
+                    ResultSet rsCom = stCom.executeQuery(sqlCom);
+
+                    if(rsCom.next()){
+                            System.out.println("Encontrada pregunta completar");
+                        String textoCorrecto =
+                            rsCom.getString("textoCorrecto");
+
+                        preguntasPartida[pos] = new PreguntasCompletar(textoCorrecto, idPregunta, idCategoria, enunciado,tipo,dificultad);
+                    }
+
+                    break;
+                    
             }
 
             pos++;
