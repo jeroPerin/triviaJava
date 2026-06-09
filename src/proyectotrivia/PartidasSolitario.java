@@ -170,9 +170,6 @@ public class PartidasSolitario extends Partidas {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
-      
-    
     
     };
     

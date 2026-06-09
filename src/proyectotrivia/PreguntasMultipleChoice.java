@@ -71,7 +71,8 @@ public class PreguntasMultipleChoice extends Preguntas {
      @Override
     public boolean verificarRespuesta(String respuestaUsuario){
     
-        if(respuestaUsuario==opcionCorrecta)
+        respuestaUsuario.toUpperCase();
+        if(respuestaUsuario==opcionCorrecta.toUpperCase())
             return true;
         else
             return false;
