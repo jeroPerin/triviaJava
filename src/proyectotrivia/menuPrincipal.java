@@ -37,8 +37,10 @@ public class menuPrincipal extends javax.swing.JFrame {
         lblTitulo.setText("MENU PRINCIPAL TRIVIA UAA");
 
         btnModo1.setText("Modo 1");
+        btnModo1.addActionListener(this::btnModo1ActionPerformed);
 
         btnModo2.setText("Modo 2");
+        btnModo2.addActionListener(this::btnModo2ActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -70,6 +72,19 @@ public class menuPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnModo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModo1ActionPerformed
+        
+        menuInicioSolitario m = new menuInicioSolitario();
+        m.setVisible(true);
+    }//GEN-LAST:event_btnModo1ActionPerformed
+
+    private void btnModo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModo2ActionPerformed
+        
+         menuInicioDuelo m = new menuInicioDuelo();
+        m.setVisible(true);
+        
+    }//GEN-LAST:event_btnModo2ActionPerformed
 
     /**
      * @param args the command line arguments

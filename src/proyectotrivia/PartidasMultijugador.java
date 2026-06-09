@@ -12,9 +12,15 @@ public class PartidasMultijugador extends Partidas{
     
     int idUsuario1;
     int puntajeFinal1;
+    int indicePregunta1;
+     Preguntas preguntasPartida1;
+    Respuestas respuestasPartida1;
     
     int idUsuario2;
     int puntajeFinal2;
+    int indicePregunta2;
+     Preguntas preguntasPartida2;
+    Respuestas respuestasPartida2;
 
     public PartidasMultijugador() {
     }
@@ -59,6 +65,14 @@ public class PartidasMultijugador extends Partidas{
         this.puntajeFinal2 = puntajeFinal2;
     }
     
-    
+    @Override
+    public void iniciarPartida(){};
+    public void finalizarPartida(){};
+    public void calcularPuntaje(){};
+    public Preguntas siguientePregunta(){    
+        
+        Preguntas p = new PreguntasVerdaderoFalso();
+    return p;
+    };
     
 }

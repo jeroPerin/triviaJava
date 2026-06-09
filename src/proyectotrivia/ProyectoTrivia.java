@@ -14,8 +14,11 @@ public class ProyectoTrivia {
      * @param args the command line arguments
      */
     
-    //holisssss
     public static void main(String[] args) {
+        
+         menuPrincipal m = new menuPrincipal();
+        m.setVisible(true);
+        
         
     }
     

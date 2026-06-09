@@ -69,10 +69,15 @@ public class PreguntasMultipleChoice extends Preguntas {
     
     //METODOS FUNCIONALIDADES
      @Override
-    public boolean verificarRespuesta(){
+    public boolean verificarRespuesta(String respuestaUsuario){
     
+        if(respuestaUsuario==opcionCorrecta)
+            return true;
+        else
+            return false;
+        
     
-    return true;
+   
     }
     
 }

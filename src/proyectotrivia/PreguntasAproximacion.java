@@ -59,10 +59,12 @@ public class PreguntasAproximacion extends Preguntas {
     
     //METODOS FUNCIONALIDADES
      @Override
-    public boolean verificarRespuesta(){
+    public boolean verificarRespuesta(String respuestaUsuario){
     
     
     return true;
     }
+  //  FUNCION PARA COMPARAR RESPUESTAS
+    
     
 }

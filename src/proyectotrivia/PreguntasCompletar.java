@@ -10,12 +10,29 @@ package proyectotrivia;
  */
 public class PreguntasCompletar extends Preguntas {
 
+    private String textoCorrecto;
+    
     public PreguntasCompletar() {
     }
 
-    public PreguntasCompletar(int idPregunta, int idCategoria, String enunciado, int tipoPregunta, int dificultad) {
-        super(idPregunta, idCategoria, enunciado, tipoPregunta, dificultad);
+    public PreguntasCompletar(String textoCorrecto) {
+        this.textoCorrecto = textoCorrecto;
     }
+
+    public PreguntasCompletar(String textoCorrecto, int idPregunta, int idCategoria, String enunciado, int tipoPregunta, int dificultad) {
+        super(idPregunta, idCategoria, enunciado, tipoPregunta, dificultad);
+        this.textoCorrecto = textoCorrecto;
+    }
+
+    public String getTextoCorrecto() {
+        return textoCorrecto;
+    }
+
+    public void setTextoCorrecto(String textoCorrecto) {
+        this.textoCorrecto = textoCorrecto;
+    }
+
+    
 
     public int getIdPregunta() {
         return idPregunta;
@@ -59,10 +76,14 @@ public class PreguntasCompletar extends Preguntas {
  
     //METODOS FUNCIONALIDADES
      @Override
-    public boolean verificarRespuesta(){
+    public boolean verificarRespuesta(String respuestaUsuario){
     
-    
-    return true;
+    if(respuestaUsuario==textoCorrecto)
+            return true;
+        else
+            return false;
+        
+      
     }
     
     

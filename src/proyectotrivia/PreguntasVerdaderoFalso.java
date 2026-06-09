@@ -10,25 +10,16 @@ package proyectotrivia;
  */
 public class PreguntasVerdaderoFalso extends Preguntas {
     
-   boolean opcionBooleana;
    boolean opcionCorrecta;
 
     public PreguntasVerdaderoFalso() {
     }
 
-    public PreguntasVerdaderoFalso(boolean opcionBooleana, boolean opcionCorrecta, int idPregunta, int idCategoria, String enunciado, int tipoPregunta, int dificultad) {
+    public PreguntasVerdaderoFalso( boolean opcionCorrecta, int idPregunta, int idCategoria, String enunciado, int tipoPregunta, int dificultad) {
         super(idPregunta, idCategoria, enunciado, tipoPregunta, dificultad);
-        this.opcionBooleana = opcionBooleana;
         this.opcionCorrecta = opcionCorrecta;
     }
 
-    public boolean isOpcionBooleana() {
-        return opcionBooleana;
-    }
-
-    public void setOpcionBooleana(boolean opcionBooleana) {
-        this.opcionBooleana = opcionBooleana;
-    }
 
     public boolean isOpcionCorrecta() {
         return opcionCorrecta;
@@ -41,12 +32,13 @@ public class PreguntasVerdaderoFalso extends Preguntas {
    //METODOS FUNCIONALIDADES
     
     @Override
-    public boolean verificarRespuesta(){
+    public boolean verificarRespuesta(String respuestaUsuario){
     
-    //if(respuestaJugador=opcionCorrecta)
-    return true;
-    //else
-      //  return false;
+        
+    if(respuestaUsuario.equals(opcionCorrecta))
+        return true;
+    else
+        return false;
     
     }
     

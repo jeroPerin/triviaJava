@@ -3,6 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package proyectotrivia;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
 
 /**
  *
@@ -13,6 +16,8 @@ abstract public class Partidas {
     int idPartida;
    // DateTime fecha;
     boolean finalizada;
+   
+   
 
     public Partidas() {
     }
@@ -39,10 +44,14 @@ abstract public class Partidas {
     }
     
     /*iniciarPartida()
-finalizarPartida()
-calcularPuntaje()
-verificarRespuesta()
-siguientePregunta()*/
-    
-    
+    finalizarPartida()
+    calcularPuntaje()
+    verificarRespuesta()
+    siguientePregunta()*/
+
+    abstract void iniciarPartida();
+    abstract void finalizarPartida();
+    abstract void calcularPuntaje();
+     
+    abstract Preguntas siguientePregunta();
 }
