@@ -220,6 +220,9 @@
       </Layout>
       <SubComponents>
         <Component class="javax.swing.JTextField" name="txtCompletar">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCompletarActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lblCompletar">
           <Properties>

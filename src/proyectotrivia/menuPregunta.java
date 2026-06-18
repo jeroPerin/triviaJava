@@ -168,6 +168,8 @@ public class menuPregunta extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        txtCompletar.addActionListener(this::txtCompletarActionPerformed);
+
         lblCompletar.setText("Completa:");
 
         btnCompletar.setText("RESPONDER");
@@ -271,6 +273,10 @@ public class menuPregunta extends javax.swing.JFrame {
         // TODO add your handling code here:
         procesarRespuesta(txtCompletar.getText());
     }//GEN-LAST:event_btnCompletarActionPerformed
+
+    private void txtCompletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCompletarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCompletarActionPerformed
 
     /**
      * @param args the command line arguments
