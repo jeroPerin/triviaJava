@@ -182,6 +182,7 @@ public class PartidasSolitario extends Partidas {
     public void calcularPuntaje(){
     
     };
+    
     public Preguntas siguientePregunta(){
         
        

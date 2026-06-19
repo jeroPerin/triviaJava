@@ -38,17 +38,17 @@ public class menuInicioDuelo extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(147, 147, 147)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(119, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addContainerGap(90, Short.MAX_VALUE))
+                .addGap(118, 118, 118))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(60, 60, 60)
+                .addGap(65, 65, 65)
                 .addComponent(jLabel1)
-                .addContainerGap(224, Short.MAX_VALUE))
+                .addContainerGap(219, Short.MAX_VALUE))
         );
 
         pack();

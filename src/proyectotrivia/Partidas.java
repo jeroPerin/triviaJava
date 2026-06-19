@@ -52,6 +52,7 @@ abstract public class Partidas {
     abstract void iniciarPartida();
     abstract void finalizarPartida();
     abstract void calcularPuntaje();
-     
+    
     abstract Preguntas siguientePregunta();
+     
 }
