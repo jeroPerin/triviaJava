@@ -13,15 +13,16 @@ public class menuPregunta extends javax.swing.JFrame {
        private Partidas p;
        private int jugador;
        private Preguntas pregActual;
-       
+       private boolean eraMiTurno = false;
        private boolean respuestaCorrecta;
        private Timer timer;
        
     public menuPregunta(Partidas partida, int idJugador) {
         initComponents();
+        
         p=partida;
         if(p instanceof PartidasMultijugador){
-        timer = new Timer(1000, e -> {
+        timer = new Timer(200, e -> {
             actualizarPantalla();
         });
          timer.start();
@@ -51,6 +52,8 @@ public class menuPregunta extends javax.swing.JFrame {
         pregActual= p.siguientePregunta();
         System.out.println(pregActual);
       
+        
+        if(p instanceof PartidasSolitario)
         mostrarPregunta();
         
     }
@@ -88,20 +91,24 @@ public class menuPregunta extends javax.swing.JFrame {
 
     private void actualizarPantalla(){
     
-          if(((PartidasMultijugador)p).getTurno() == jugador  ){
+        boolean esMiTurno = ((PartidasMultijugador)p).getTurno() == jugador;
+        
+          if( esMiTurno && !eraMiTurno  ){
 
                  
                 mostrarPregunta();
-                
+                eraMiTurno=true;
             }
-            else{
-
-                ocultarPaneles();
-
+            
+                
+              if(!eraMiTurno)
+              
+              { 
+                  ocultarPaneles();
                 lblPregunta.setText("Esperando al otro jugador...");
             }
     
-    
+               eraMiTurno = esMiTurno;
     }
     
     private void ocultarPaneles(){
