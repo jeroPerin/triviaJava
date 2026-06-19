@@ -201,13 +201,12 @@ public class PartidasMultijugador extends Partidas{
     @Override
     public Preguntas siguientePregunta(){
         
-       Preguntas p = new Preguntas();
         if(turno==1){
             turno=2;
-            p = preguntasPartida1[--indicePregunta1];
+            return preguntasPartida1[--indicePregunta1];
         }else{
             turno=1;
-            p = preguntasPartida2[--indicePregunta2];
+            return preguntasPartida2[--indicePregunta2];
         }
         
     };
