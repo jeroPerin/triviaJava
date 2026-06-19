@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package proyectotrivia;
-
+import javax.swing.Timer;
 /**
  *
  * @author JERO
@@ -11,19 +11,29 @@ package proyectotrivia;
 public class menuPregunta extends javax.swing.JFrame {
     
        private Partidas p;
-       
+       private int jugador;
        private Preguntas pregActual;
        
        private boolean respuestaCorrecta;
-
-    public menuPregunta(Partidas partida) {
+       private Timer timer;
+       
+    public menuPregunta(Partidas partida, int idJugador) {
         initComponents();
+        p=partida;
+        if(p instanceof PartidasMultijugador){
+        timer = new Timer(1000, e -> {
+            actualizarPantalla();
+        });
+         timer.start();
+        }
+
+        
         
         panelVerdaderoFalso.setBounds(0, 0, 600, 200);
         panelMultipleChoice.setBounds(0, 0, 600, 200);
         panelCompletar.setBounds(0, 0, 600, 200);
-        
-         p=partida;
+        jugador=idJugador;
+         
         pregActual=p.siguientePregunta();
         System.out.println(pregActual);
           
@@ -48,10 +58,8 @@ public class menuPregunta extends javax.swing.JFrame {
     private void mostrarPregunta(){
         
         
-        panelVerdaderoFalso.setVisible(false);
-        panelMultipleChoice.setVisible(false);
-        panelCompletar.setVisible(false);
-        
+            ocultarPaneles();
+            
         
         switch(pregActual.tipoPregunta){
         
@@ -78,6 +86,33 @@ public class menuPregunta extends javax.swing.JFrame {
         lblPregunta.setText(pregActual.enunciado);
     }
 
+    private void actualizarPantalla(){
+    
+          if(((PartidasMultijugador)p).getTurno() == jugador  ){
+
+                 
+                mostrarPregunta();
+                
+            }
+            else{
+
+                ocultarPaneles();
+
+                lblPregunta.setText("Esperando al otro jugador...");
+            }
+    
+    
+    }
+    
+    private void ocultarPaneles(){
+    
+        panelVerdaderoFalso.setVisible(false);
+        panelMultipleChoice.setVisible(false);
+        panelCompletar.setVisible(false);
+    
+    }
+    
+    
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

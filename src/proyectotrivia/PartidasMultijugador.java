@@ -71,6 +71,14 @@ public class PartidasMultijugador extends Partidas{
     public void setPuntajeFinal2(int puntajeFinal2) {
         this.puntajeFinal2 = puntajeFinal2;
     }
+
+    public int getTurno() {
+        return turno;
+    }
+
+    public void setTurno(int turno) {
+        this.turno = turno;
+    }
     
     @Override
     public void iniciarPartida(){

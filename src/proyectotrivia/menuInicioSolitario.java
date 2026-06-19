@@ -73,7 +73,7 @@ public class menuInicioSolitario extends javax.swing.JFrame {
         PartidasSolitario p = new PartidasSolitario(1,0,1,false);
         p.iniciarPartida();
             
-        menuPregunta m = new menuPregunta(p);
+        menuPregunta m = new menuPregunta(p,1);
         m.setVisible(true);
         
         

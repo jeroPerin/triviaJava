@@ -67,11 +67,11 @@ public class menuInicioDuelo extends javax.swing.JFrame {
 
     private void btnIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarActionPerformed
         // TODO add your handling code here:
-        PartidasMultijugador p = new PartidasMultijugador(1, 0, 1, 0, 1, false);
+        PartidasMultijugador p = new PartidasMultijugador(1, 0, 2, 0, 1, false);
         p.iniciarPartida();
         
-        menuPregunta m1 = new menuPregunta(p);
-        menuPregunta m2 = new menuPregunta(p);
+        menuPregunta m1 = new menuPregunta(p,1);
+        menuPregunta m2 = new menuPregunta(p,2);
         
         m1.setVisible(true);
         m2.setVisible(true);
