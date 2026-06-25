@@ -50,6 +50,12 @@ public class menuPregunta extends javax.swing.JFrame {
             System.out.println("RESPONDISTE BIEN");
         
         pregActual= p.siguientePregunta();
+        if(pregActual == null){
+        p.finalizarPartida();
+        menuFinalPartida m = new menuFinalPartida();
+        m.setVisible(true);
+        dispose();
+            }
         System.out.println(pregActual);
       
         

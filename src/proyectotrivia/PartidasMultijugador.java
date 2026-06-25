@@ -210,6 +210,10 @@ public class PartidasMultijugador extends Partidas{
     public Preguntas siguientePregunta(){
         
         if(turno==1){
+            
+            if(indicePregunta1 >= preguntasPartida1.length)
+                     return null;  //cuando venga a buscar la pregunta del jugador1 y no haya significa que la partida termino, por eso devuelve null.
+            
             turno=2;
             return preguntasPartida1[--indicePregunta1];
         }else{

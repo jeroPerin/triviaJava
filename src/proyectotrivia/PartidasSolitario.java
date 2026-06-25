@@ -185,6 +185,9 @@ public class PartidasSolitario extends Partidas {
     
     public Preguntas siguientePregunta(){
         
+       if(indicePregunta <= 0)
+        return null;  //devuelve null cuando no hay mas preguntas para que finalice la partida despues
+        
        
        indicePregunta--; 
      return preguntasPartida[indicePregunta];
