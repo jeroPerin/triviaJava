@@ -46,8 +46,10 @@ public class menuPregunta extends javax.swing.JFrame {
     private void procesarRespuesta(String respuesta){
     
         respuestaCorrecta = pregActual.verificarRespuesta(respuesta);
+        p.guardarRespuesta(respuesta);
         if(respuestaCorrecta)
             System.out.println("RESPONDISTE BIEN");
+        
         
         pregActual= p.siguientePregunta();
         if(pregActual == null){

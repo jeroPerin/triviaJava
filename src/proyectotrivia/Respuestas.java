@@ -11,7 +11,7 @@ package proyectotrivia;
  */
 public class Respuestas {
     
-    int idRespuesta;
+    int idRespuesta;  //no se si tiene id propia, es irrelevante, simplemente sirve para guardar una respuesta no hace falta identificar.ya con que se guarde en la partida es suficiente en mi opinion.
     int idPartida;
     int idPregunta;
     String respuestaSeleccionada;

@@ -203,7 +203,20 @@ public class PartidasMultijugador extends Partidas{
         }
     
     };
-    public void finalizarPartida(){};
+    
+    public void guardarRespuesta(String respuesta){
+    
+    
+        
+        
+    };
+    
+    
+    public void finalizarPartida(){
+    
+    //calcularpuntaje()
+    
+    };
     public void calcularPuntaje(){};
     
     @Override

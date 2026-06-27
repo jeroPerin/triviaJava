@@ -173,10 +173,23 @@ public class PartidasSolitario extends Partidas {
     
     };
     
+    public void guardarRespuesta(String respuesta){
+    
+        Respuestas r = new Respuestas();
+        r.setRespuestaSeleccionada(respuesta);  //faltaria inicializar las otras variables pero primero hay que ver lo de la id
+        
+        
+        respuestasPartida[indicePregunta] = r;
+        
+        
+    
+    };
+    
     
     
     public void finalizarPartida(){
-    
+        
+        //calcularpuntaje()
     
     };
     public void calcularPuntaje(){
