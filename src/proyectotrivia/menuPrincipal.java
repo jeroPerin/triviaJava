@@ -16,7 +16,7 @@ public class menuPrincipal extends javax.swing.JFrame {
      * Creates new form menuPrincipal
      */
     public menuPrincipal() {
-        setLocationRelativeTo(null);
+        
         initComponents();
     }
 
@@ -98,6 +98,7 @@ public class menuPrincipal extends javax.swing.JFrame {
     private void btnModo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModo2ActionPerformed
         
          menuInicioDuelo m = new menuInicioDuelo();
+         m.setLocationRelativeTo(null);
         m.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnModo2ActionPerformed

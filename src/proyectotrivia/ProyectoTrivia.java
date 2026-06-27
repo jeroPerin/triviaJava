@@ -17,6 +17,7 @@ public class ProyectoTrivia {
     public static void main(String[] args) {
         
          menuPrincipal m = new menuPrincipal();
+         m.setLocationRelativeTo(null);
         m.setVisible(true);
         
         
