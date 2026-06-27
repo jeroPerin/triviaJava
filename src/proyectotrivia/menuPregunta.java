@@ -53,6 +53,7 @@ public class menuPregunta extends javax.swing.JFrame {
         if(pregActual == null){
         p.finalizarPartida();
         menuFinalPartida m = new menuFinalPartida();
+        m.setLocationRelativeTo(null);
         m.setVisible(true);
         dispose();
             }
@@ -118,7 +119,8 @@ public class menuPregunta extends javax.swing.JFrame {
     }
     
     private void ocultarPaneles(){
-    
+        
+        txtCompletar.setText("");
         panelVerdaderoFalso.setVisible(false);
         panelMultipleChoice.setVisible(false);
         panelCompletar.setVisible(false);
@@ -145,8 +147,8 @@ public class menuPregunta extends javax.swing.JFrame {
         lblCompletar = new javax.swing.JLabel();
         btnCompletar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
-        setLocation(new java.awt.Point(700, 500));
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setLocation(new java.awt.Point(650, 300));
 
         btnVerdadero.setText("VERDADERO");
         btnVerdadero.addActionListener(this::btnVerdaderoActionPerformed);

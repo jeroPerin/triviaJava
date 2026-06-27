@@ -72,9 +72,12 @@ public class menuInicioDuelo extends javax.swing.JFrame {
         
         menuPregunta m1 = new menuPregunta(p,1);
         menuPregunta m2 = new menuPregunta(p,2);
+       m1.setLocationRelativeTo(null);
+       m2.setLocationRelativeTo(null);
         
         m1.setVisible(true);
         m2.setVisible(true);
+        dispose();
         
     }//GEN-LAST:event_btnIniciarActionPerformed
 
