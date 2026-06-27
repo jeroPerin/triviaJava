@@ -77,13 +77,14 @@ public class menuPrincipal extends javax.swing.JFrame {
         
         menuInicioSolitario m = new menuInicioSolitario();
         m.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnModo1ActionPerformed
 
     private void btnModo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModo2ActionPerformed
         
          menuInicioDuelo m = new menuInicioDuelo();
         m.setVisible(true);
-        
+        dispose();
     }//GEN-LAST:event_btnModo2ActionPerformed
 
     /**

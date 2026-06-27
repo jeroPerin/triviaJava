@@ -145,7 +145,8 @@ public class menuPregunta extends javax.swing.JFrame {
         lblCompletar = new javax.swing.JLabel();
         btnCompletar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setLocation(new java.awt.Point(700, 500));
 
         btnVerdadero.setText("VERDADERO");
         btnVerdadero.addActionListener(this::btnVerdaderoActionPerformed);
