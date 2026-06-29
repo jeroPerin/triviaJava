@@ -176,10 +176,10 @@ public class PartidasSolitario extends Partidas {
     public void guardarRespuesta(String respuesta){
     
         Respuestas r = new Respuestas();
-        r.setRespuestaSeleccionada(respuesta);  //faltaria inicializar las otras variables pero primero hay que ver lo de la id
+        r.setRespuestaSeleccionada(respuesta);      //faltaria inicializar las otras variables pero primero hay que ver lo de la id
         
-        if(preguntasPartida[indicePregunta].verificarRespuesta(respuesta))                                           //chequear si es correcta y setear la respuesta
-        r.setRespuestaCorrecta(true);
+        if(preguntasPartida[indicePregunta].verificarRespuesta(respuesta))     //chequear si es correcta y setear la respuesta
+             r.setRespuestaCorrecta(true);
         else
             r.setRespuestaCorrecta(false);
             
@@ -204,8 +204,7 @@ public class PartidasSolitario extends Partidas {
             System.out.println(r.getRespuestaSeleccionada());
             if(r.isRespuestaCorrecta())
                 puntaje+=100;
-            
-        
+           
         }
         
         puntajeFinal=puntaje;

@@ -78,7 +78,7 @@ public class PreguntasCompletar extends Preguntas {
      @Override
     public boolean verificarRespuesta(String respuestaUsuario){
     
-    if(respuestaUsuario==textoCorrecto.toUpperCase())
+    if((respuestaUsuario.toUpperCase().trim()).equals(textoCorrecto.toUpperCase().trim()))
             return true;
         else
             return false;

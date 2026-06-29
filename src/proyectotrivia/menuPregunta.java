@@ -47,6 +47,7 @@ public class menuPregunta extends javax.swing.JFrame {
     
         
         System.out.println(respuesta);
+        
         p.guardarRespuesta(respuesta.toUpperCase());
 
         pregActual= p.siguientePregunta();
