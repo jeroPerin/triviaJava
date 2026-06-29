@@ -11,47 +11,20 @@ package proyectotrivia;
  */
 public class Respuestas {
     
-    int idRespuesta;  //no se si tiene id propia, es irrelevante, simplemente sirve para guardar una respuesta no hace falta identificar.ya con que se guarde en la partida es suficiente en mi opinion.
-    int idPartida;
-    int idPregunta;
     String respuestaSeleccionada;
     boolean respuestaCorrecta;
 
     public Respuestas() {
     }
 
-    public Respuestas(int idRespuesta, int idPartida, int idPregunta, String respuestaSeleccionada, boolean respuestaCorrecta) {
-        this.idRespuesta = idRespuesta;
-        this.idPartida = idPartida;
-        this.idPregunta = idPregunta;
+    public Respuestas(String respuestaSeleccionada, boolean respuestaCorrecta) {
+        
+       
         this.respuestaSeleccionada = respuestaSeleccionada;
         this.respuestaCorrecta = respuestaCorrecta;
     }
 
-    public int getIdRespuesta() {
-        return idRespuesta;
-    }
-
-    public void setIdRespuesta(int idRespuesta) {
-        this.idRespuesta = idRespuesta;
-    }
-
-    public int getIdPartida() {
-        return idPartida;
-    }
-
-    public void setIdPartida(int idPartida) {
-        this.idPartida = idPartida;
-    }
-
-    public int getIdPregunta() {
-        return idPregunta;
-    }
-
-    public void setIdPregunta(int idPregunta) {
-        this.idPregunta = idPregunta;
-    }
-
+    
     public String getRespuestaSeleccionada() {
         return respuestaSeleccionada;
     }
