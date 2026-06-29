@@ -58,6 +58,7 @@ public class menuPregunta extends javax.swing.JFrame {
         m.setLocationRelativeTo(null);
         m.setVisible(true);
         dispose();
+        return;
             }
         System.out.println(pregActual);
       
