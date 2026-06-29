@@ -206,7 +206,29 @@ public class PartidasMultijugador extends Partidas{
     
     public void guardarRespuesta(String respuesta){
     
-    
+        Respuestas r = new Respuestas();
+        r.setRespuestaSeleccionada(respuesta);  //faltaria inicializar las otras variables pero primero hay que ver lo de la id
+        
+        
+        if(turno==idUsuario1){
+        
+        if(preguntasPartida1[indicePregunta1].verificarRespuesta(respuesta))                                           //chequear si es correcta y setear la respuesta
+        r.setRespuestaCorrecta(true);
+        else
+            r.setRespuestaCorrecta(false);
+            
+        respuestasPartida1[indicePregunta1] = r;}
+        else{
+            
+         if(preguntasPartida2[indicePregunta2].verificarRespuesta(respuesta))                                           //chequear si es correcta y setear la respuesta
+        r.setRespuestaCorrecta(true);
+        else
+            r.setRespuestaCorrecta(false);
+            
+        respuestasPartida1[indicePregunta2] = r;
+        
+        }
+        
         
         
     };
@@ -217,7 +239,12 @@ public class PartidasMultijugador extends Partidas{
     //calcularpuntaje()
     
     };
-    public void calcularPuntaje(){};
+    public void calcularPuntaje(){
+    
+    
+    
+    
+    };
     
     @Override
     public Preguntas siguientePregunta(){

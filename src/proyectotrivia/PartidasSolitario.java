@@ -178,7 +178,11 @@ public class PartidasSolitario extends Partidas {
         Respuestas r = new Respuestas();
         r.setRespuestaSeleccionada(respuesta);  //faltaria inicializar las otras variables pero primero hay que ver lo de la id
         
-        
+        if(preguntasPartida[indicePregunta].verificarRespuesta(respuesta))                                           //chequear si es correcta y setear la respuesta
+        r.setRespuestaCorrecta(true);
+        else
+            r.setRespuestaCorrecta(false);
+            
         respuestasPartida[indicePregunta] = r;
         
         
@@ -193,6 +197,16 @@ public class PartidasSolitario extends Partidas {
     
     };
     public void calcularPuntaje(){
+        
+        int puntaje=0;
+        
+        for(Respuestas r : respuestasPartida){
+            
+            if(r.isRespuestaCorrecta())
+                puntaje+=100;
+            
+        
+        }
     
     };
     
