@@ -34,8 +34,8 @@ public class PreguntasVerdaderoFalso extends Preguntas {
     @Override
     public boolean verificarRespuesta(String respuestaUsuario){
     
-        
-    if(respuestaUsuario.equals(opcionCorrecta))
+    
+    if(Boolean.parseBoolean(respuestaUsuario) == opcionCorrecta)
         return true;
     else
         return false;

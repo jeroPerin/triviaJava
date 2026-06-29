@@ -201,7 +201,7 @@ public class PartidasSolitario extends Partidas {
         int puntaje=0;
         
         for(Respuestas r : respuestasPartida){
-            
+            System.out.println(r.getRespuestaSeleccionada());
             if(r.isRespuestaCorrecta())
                 puntaje+=100;
             

@@ -45,14 +45,12 @@ public class menuPregunta extends javax.swing.JFrame {
     
     private void procesarRespuesta(String respuesta){
     
-        respuestaCorrecta = pregActual.verificarRespuesta(respuesta);
         
-        p.guardarRespuesta(respuesta);
-        if(respuestaCorrecta)
-            System.out.println("RESPONDISTE BIEN");
-        
-        
+        System.out.println(respuesta);
+        p.guardarRespuesta(respuesta.toUpperCase());
+
         pregActual= p.siguientePregunta();
+        
         if(pregActual == null){
         p.finalizarPartida();
         menuFinalPartida m = new menuFinalPartida(p);
