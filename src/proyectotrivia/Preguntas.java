@@ -15,6 +15,7 @@ abstract public class Preguntas {
     String enunciado;
     int tipoPregunta; // 1 VoF - 2 MulChoice - 3 Completar 
     int dificultad ; // 1 facil -2 intermedia - 3 dificil
+  
 
     public Preguntas() {
     }

@@ -193,7 +193,7 @@ public class PartidasSolitario extends Partidas {
     
     public void finalizarPartida(){
         
-        //calcularpuntaje()
+        calcularPuntaje();
     
     };
     public void calcularPuntaje(){
@@ -207,6 +207,8 @@ public class PartidasSolitario extends Partidas {
             
         
         }
+        
+        puntajeFinal=puntaje;
     
     };
     
