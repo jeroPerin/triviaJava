@@ -225,7 +225,7 @@ public class PartidasMultijugador extends Partidas{
         else
             r.setRespuestaCorrecta(false);
             
-        respuestasPartida1[indicePregunta2] = r;
+        respuestasPartida2[indicePregunta2] = r;
         
         }
         
@@ -236,14 +236,34 @@ public class PartidasMultijugador extends Partidas{
     
     public void finalizarPartida(){
     
-    //calcularpuntaje()
+        calcularPuntaje();
     
     };
     public void calcularPuntaje(){
     
-    
-    
-    
+        int puntaje=0;
+        
+        for(Respuestas r : respuestasPartida1){
+            if(r != null){
+            System.out.println(r.getRespuestaSeleccionada());
+            if(r.isRespuestaCorrecta())
+                puntaje+=100;
+            }
+        }
+        
+        puntajeFinal1=puntaje;
+        
+        puntaje=0;
+        
+        for(Respuestas r : respuestasPartida2){
+            if(r != null){
+            System.out.println(r.getRespuestaSeleccionada());
+            if(r.isRespuestaCorrecta())
+                puntaje+=100;
+            }
+        }
+        
+        puntajeFinal2=puntaje;
     };
     
     @Override
