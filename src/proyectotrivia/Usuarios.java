@@ -46,5 +46,17 @@ public class Usuarios  {
         this.contraseña = contraseña;
     }
     
-    
+   /*public void insertarUsuario(){
+
+
+        Conexion c = new Conexion(nombre, nombre, nombre, nombre);
+        if(existeUsuario(txtNombre.getText())){
+
+            String nombre = txtNombre.getText();
+            String contrasenia = txtApellido.getText();
+
+            String sql = "INSERT INTO usuarios (nombre, apellido)"
+                    + " VALUES ('" + nombre + "' , '" + apellido + "')";
+        }
+    }*/
 }
