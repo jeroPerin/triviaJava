@@ -4,6 +4,9 @@
  */
 package proyectotrivia;
 
+import java.awt.Image;
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author JERO
@@ -18,6 +21,16 @@ public class menuPrincipal extends javax.swing.JFrame {
     public menuPrincipal() {
         
         initComponents();
+         
+        ImageIcon icon = new ImageIcon(
+         getClass().getResource("/proyectotrivia/messi celebrando.png")
+        );
+
+        Image img = icon.getImage();
+        Image imgEscalada = img.getScaledInstance(900, 500, Image.SCALE_SMOOTH);
+
+        lblImagen.setIcon(new ImageIcon(imgEscalada));
+        
     }
 
     /**
@@ -31,57 +44,87 @@ public class menuPrincipal extends javax.swing.JFrame {
 
         lblTitulo = new javax.swing.JLabel();
         btnModo1 = new javax.swing.JButton();
-        btnModo2 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        btnModoDuelo = new javax.swing.JButton();
+        lblImagen = new javax.swing.JLabel();
+        btnRegistro = new javax.swing.JButton();
+        btnInfo = new javax.swing.JButton();
+        btnRegistro1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(0, 0));
 
-        lblTitulo.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        lblTitulo.setText("MENU PRINCIPAL TRIVIA UAA");
+        lblTitulo.setBackground(new java.awt.Color(51, 204, 255));
+        lblTitulo.setFont(new java.awt.Font("Cambria", 0, 48)); // NOI18N
+        lblTitulo.setText("TRIVIA UAA GAME");
 
-        btnModo1.setText("Modo 1");
+        btnModo1.setFont(new java.awt.Font("Cambria", 0, 36)); // NOI18N
+        btnModo1.setText("MODO SOLITARIO");
         btnModo1.addActionListener(this::btnModo1ActionPerformed);
 
-        btnModo2.setText("Modo 2");
-        btnModo2.addActionListener(this::btnModo2ActionPerformed);
+        btnModoDuelo.setFont(new java.awt.Font("Cambria", 0, 36)); // NOI18N
+        btnModoDuelo.setText("MODO DUELO");
+        btnModoDuelo.addActionListener(this::btnModoDueloActionPerformed);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyectotrivia/messi celebrando.png"))); // NOI18N
+        lblImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyectotrivia/messi celebrando.png"))); // NOI18N
+
+        btnRegistro.setFont(new java.awt.Font("Cambria", 0, 36)); // NOI18N
+        btnRegistro.setText("REGISTRAR USUARIO");
+        btnRegistro.addActionListener(this::btnRegistroActionPerformed);
+
+        btnInfo.setFont(new java.awt.Font("Cambria", 0, 18)); // NOI18N
+        btnInfo.setText("INFORMACION");
+
+        btnRegistro1.setFont(new java.awt.Font("Cambria", 0, 36)); // NOI18N
+        btnRegistro1.setText("HISTORIAL PARTIDAS");
+        btnRegistro1.addActionListener(this::btnRegistro1ActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblTitulo)
+                .addGap(610, 610, 610))
             .addGroup(layout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnModo1, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnModoDuelo, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRegistro1, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(410, 410, 410)
-                        .addComponent(btnModo1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(434, 434, 434)
-                        .addComponent(btnModo2, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(459, 459, 459)
-                        .addComponent(lblTitulo))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(69, 69, 69)
-                        .addComponent(jLabel1)))
-                .addContainerGap(70, Short.MAX_VALUE))
+                        .addGap(160, 160, 160)
+                        .addComponent(lblImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 940, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(116, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(250, 250, 250))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(32, 32, 32)
+                .addGap(36, 36, 36)
                 .addComponent(lblTitulo)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(47, 47, 47)
-                        .addComponent(btnModo1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(39, 39, 39)
+                        .addComponent(btnModo1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(62, 62, 62)
+                        .addComponent(btnModoDuelo, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(45, 45, 45)
+                        .addComponent(btnRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(62, 62, 62)
+                        .addComponent(btnRegistro1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(68, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(btnModo2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(31, 31, 31)
-                .addComponent(jLabel1)
-                .addContainerGap(108, Short.MAX_VALUE))
+                        .addGap(63, 63, 63)
+                        .addComponent(lblImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 459, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31))))
         );
 
         pack();
@@ -95,13 +138,27 @@ public class menuPrincipal extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btnModo1ActionPerformed
 
-    private void btnModo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModo2ActionPerformed
+    private void btnModoDueloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModoDueloActionPerformed
         
          menuInicioDuelo m = new menuInicioDuelo();
          m.setLocationRelativeTo(null);
         m.setVisible(true);
         dispose();
-    }//GEN-LAST:event_btnModo2ActionPerformed
+    }//GEN-LAST:event_btnModoDueloActionPerformed
+
+    private void btnRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroActionPerformed
+        
+        menuCargaUsuarios m = new menuCargaUsuarios();
+         m.setLocationRelativeTo(null);
+        m.setVisible(true);
+        dispose();
+        
+        
+    }//GEN-LAST:event_btnRegistroActionPerformed
+
+    private void btnRegistro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistro1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRegistro1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -129,9 +186,12 @@ public class menuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnInfo;
     private javax.swing.JButton btnModo1;
-    private javax.swing.JButton btnModo2;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton btnModoDuelo;
+    private javax.swing.JButton btnRegistro;
+    private javax.swing.JButton btnRegistro1;
+    private javax.swing.JLabel lblImagen;
     private javax.swing.JLabel lblTitulo;
     // End of variables declaration//GEN-END:variables
 }
