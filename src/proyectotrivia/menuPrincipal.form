@@ -37,7 +37,7 @@
                   <Component id="btnModo1" min="-2" pref="393" max="-2" attributes="0"/>
                   <Component id="btnModoDuelo" alignment="0" min="-2" pref="393" max="-2" attributes="0"/>
                   <Component id="btnRegistro" min="-2" pref="393" max="-2" attributes="0"/>
-                  <Component id="btnRegistro1" min="-2" pref="393" max="-2" attributes="0"/>
+                  <Component id="btnHistorial" min="-2" pref="393" max="-2" attributes="0"/>
               </Group>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
@@ -48,7 +48,7 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="btnInfo" min="-2" pref="172" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="250" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -65,10 +65,10 @@
                       <Component id="btnModo1" min="-2" pref="104" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
                       <Component id="btnModoDuelo" min="-2" pref="104" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                       <Component id="btnRegistro" min="-2" pref="104" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
-                      <Component id="btnRegistro1" min="-2" pref="104" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+                      <Component id="btnHistorial" min="-2" pref="104" max="-2" attributes="0"/>
                       <EmptySpace pref="68" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -76,7 +76,7 @@
                       <Component id="lblImagen" min="-2" pref="459" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="btnInfo" min="-2" pref="57" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -143,7 +143,7 @@
         <Property name="text" type="java.lang.String" value="INFORMACION"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btnRegistro1">
+    <Component class="javax.swing.JButton" name="btnHistorial">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Cambria" size="36" style="0"/>
@@ -151,7 +151,7 @@
         <Property name="text" type="java.lang.String" value="HISTORIAL PARTIDAS"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRegistro1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnHistorialActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

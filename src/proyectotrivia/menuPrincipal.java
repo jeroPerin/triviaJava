@@ -48,7 +48,7 @@ public class menuPrincipal extends javax.swing.JFrame {
         lblImagen = new javax.swing.JLabel();
         btnRegistro = new javax.swing.JButton();
         btnInfo = new javax.swing.JButton();
-        btnRegistro1 = new javax.swing.JButton();
+        btnHistorial = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(0, 0));
@@ -74,9 +74,9 @@ public class menuPrincipal extends javax.swing.JFrame {
         btnInfo.setFont(new java.awt.Font("Cambria", 0, 18)); // NOI18N
         btnInfo.setText("INFORMACION");
 
-        btnRegistro1.setFont(new java.awt.Font("Cambria", 0, 36)); // NOI18N
-        btnRegistro1.setText("HISTORIAL PARTIDAS");
-        btnRegistro1.addActionListener(this::btnRegistro1ActionPerformed);
+        btnHistorial.setFont(new java.awt.Font("Cambria", 0, 36)); // NOI18N
+        btnHistorial.setText("HISTORIAL PARTIDAS");
+        btnHistorial.addActionListener(this::btnHistorialActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -92,7 +92,7 @@ public class menuPrincipal extends javax.swing.JFrame {
                     .addComponent(btnModo1, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnModoDuelo, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnRegistro1, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnHistorial, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(160, 160, 160)
@@ -101,7 +101,7 @@ public class menuPrincipal extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(250, 250, 250))))
+                        .addGap(35, 35, 35))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -114,17 +114,17 @@ public class menuPrincipal extends javax.swing.JFrame {
                         .addComponent(btnModo1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(62, 62, 62)
                         .addComponent(btnModoDuelo, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(45, 45, 45)
+                        .addGap(55, 55, 55)
                         .addComponent(btnRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(62, 62, 62)
-                        .addComponent(btnRegistro1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(52, 52, 52)
+                        .addComponent(btnHistorial, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(68, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(63, 63, 63)
                         .addComponent(lblImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 459, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(31, 31, 31))))
+                        .addGap(25, 25, 25))))
         );
 
         pack();
@@ -156,9 +156,12 @@ public class menuPrincipal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnRegistroActionPerformed
 
-    private void btnRegistro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistro1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnRegistro1ActionPerformed
+    private void btnHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistorialActionPerformed
+         menuHistorialPartidas m = new menuHistorialPartidas();
+         m.setLocationRelativeTo(null);
+            m.setVisible(true);
+            dispose();
+    }//GEN-LAST:event_btnHistorialActionPerformed
 
     /**
      * @param args the command line arguments
@@ -186,11 +189,11 @@ public class menuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnHistorial;
     private javax.swing.JButton btnInfo;
     private javax.swing.JButton btnModo1;
     private javax.swing.JButton btnModoDuelo;
     private javax.swing.JButton btnRegistro;
-    private javax.swing.JButton btnRegistro1;
     private javax.swing.JLabel lblImagen;
     private javax.swing.JLabel lblTitulo;
     // End of variables declaration//GEN-END:variables
