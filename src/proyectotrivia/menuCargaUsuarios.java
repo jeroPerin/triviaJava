@@ -178,8 +178,9 @@ public class menuCargaUsuarios extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Bienvenido " + usuario);
 
             menuPrincipal m = new menuPrincipal();
+             m.setLocationRelativeTo(null);
             m.setVisible(true);
-            this.dispose();
+            dispose();
 
         }else{
             JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos.");
