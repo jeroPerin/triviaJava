@@ -7,6 +7,7 @@ package proyectotrivia;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
@@ -236,7 +237,29 @@ public class PartidasMultijugador extends Partidas{
     
     public void finalizarPartida(){
     
-        calcularPuntaje();
+        try {
+            calcularPuntaje();
+            
+            Connection con = DriverManager.getConnection(
+                    "jdbc:mysql://localhost:3306/triviaProyecto",
+                    "root",
+                    ""
+            );
+            
+            
+            String sql = "INSERT INTO partidasmultijugador (idUsuario1,idUsuario2,puntajeFinal1,puntajeFinal2)VALUES(" + idUsuario1 + "," + idUsuario2 +"," + puntajeFinal1 + "," + puntajeFinal2 +")";  // despues join con usuarios
+            Statement st = con.createStatement();
+            st.executeUpdate(sql);
+           
+            
+            
+            
+        } catch (SQLException ex) {
+            System.getLogger(PartidasMultijugador.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+        }
+            
+        
+        
     
     };
     public void calcularPuntaje(){
