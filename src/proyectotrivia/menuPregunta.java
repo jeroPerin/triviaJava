@@ -30,9 +30,10 @@ public class menuPregunta extends javax.swing.JFrame {
 
         
         
-        panelVerdaderoFalso.setBounds(0, 0, 600, 200);
-        panelMultipleChoice.setBounds(0, 0, 600, 200);
-        panelCompletar.setBounds(0, 0, 600, 200);
+        panelVerdaderoFalso.setBounds(471, 50, 100, 500);
+            panelMultipleChoice.setBounds(471, 50, 100, 500);
+            panelCompletar5.setBounds(471, 50, 100, 500);
+        
         jugador=idJugador;
          
         pregActual=p.siguientePregunta();
@@ -90,7 +91,7 @@ public class menuPregunta extends javax.swing.JFrame {
               
             panelMultipleChoice.setVisible(true);break;
            
-           case 3 : panelCompletar.setVisible(true);break ;
+           case 3 : panelCompletar5.setVisible(true);break ;
            
         
         }
@@ -123,10 +124,10 @@ public class menuPregunta extends javax.swing.JFrame {
     
     private void ocultarPaneles(){
         
-        txtCompletar.setText("");
+        txtCompletar5.setText("");
         panelVerdaderoFalso.setVisible(false);
         panelMultipleChoice.setVisible(false);
-        panelCompletar.setVisible(false);
+        panelCompletar5.setVisible(false);
     
     }
     
@@ -145,17 +146,22 @@ public class menuPregunta extends javax.swing.JFrame {
         opcion1MultipleChoice = new javax.swing.JButton();
         opcion2MultipleChoice = new javax.swing.JButton();
         opcion4MultipleChoice = new javax.swing.JButton();
-        panelCompletar = new javax.swing.JPanel();
-        txtCompletar = new javax.swing.JTextField();
-        lblCompletar = new javax.swing.JLabel();
-        btnCompletar = new javax.swing.JButton();
+        panelCompletar5 = new javax.swing.JPanel();
+        txtCompletar5 = new javax.swing.JTextField();
+        lblCompletar5 = new javax.swing.JLabel();
+        btnCompletar5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setLocation(new java.awt.Point(650, 300));
 
+        lblPregunta.setFont(new java.awt.Font("Cambria", 0, 24)); // NOI18N
+        lblPregunta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        btnVerdadero.setFont(new java.awt.Font("Cambria", 0, 18)); // NOI18N
         btnVerdadero.setText("VERDADERO");
         btnVerdadero.addActionListener(this::btnVerdaderoActionPerformed);
 
+        btnFalso.setFont(new java.awt.Font("Cambria", 0, 18)); // NOI18N
         btnFalso.setText("FALSO");
         btnFalso.addActionListener(this::btnFalsoActionPerformed);
 
@@ -164,28 +170,32 @@ public class menuPregunta extends javax.swing.JFrame {
         panelVerdaderoFalsoLayout.setHorizontalGroup(
             panelVerdaderoFalsoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelVerdaderoFalsoLayout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addComponent(btnFalso)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(39, 39, 39)
+                .addComponent(btnFalso, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(163, 163, 163)
                 .addComponent(btnVerdadero)
-                .addGap(38, 38, 38))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
         panelVerdaderoFalsoLayout.setVerticalGroup(
             panelVerdaderoFalsoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelVerdaderoFalsoLayout.createSequentialGroup()
                 .addContainerGap(34, Short.MAX_VALUE)
                 .addGroup(panelVerdaderoFalsoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnFalso)
-                    .addComponent(btnVerdadero))
+                    .addComponent(btnFalso, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnVerdadero, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31))
         );
 
+        opcion3MultipleChoice.setFont(new java.awt.Font("Cambria", 0, 18)); // NOI18N
         opcion3MultipleChoice.addActionListener(this::opcion3MultipleChoiceActionPerformed);
 
+        opcion1MultipleChoice.setFont(new java.awt.Font("Cambria", 0, 18)); // NOI18N
         opcion1MultipleChoice.addActionListener(this::opcion1MultipleChoiceActionPerformed);
 
+        opcion2MultipleChoice.setFont(new java.awt.Font("Cambria", 0, 18)); // NOI18N
         opcion2MultipleChoice.addActionListener(this::opcion2MultipleChoiceActionPerformed);
 
+        opcion4MultipleChoice.setFont(new java.awt.Font("Cambria", 0, 18)); // NOI18N
         opcion4MultipleChoice.addActionListener(this::opcion4MultipleChoiceActionPerformed);
 
         javax.swing.GroupLayout panelMultipleChoiceLayout = new javax.swing.GroupLayout(panelMultipleChoice);
@@ -193,139 +203,135 @@ public class menuPregunta extends javax.swing.JFrame {
         panelMultipleChoiceLayout.setHorizontalGroup(
             panelMultipleChoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelMultipleChoiceLayout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addGroup(panelMultipleChoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(panelMultipleChoiceLayout.createSequentialGroup()
-                        .addComponent(opcion2MultipleChoice)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 144, Short.MAX_VALUE)
-                        .addComponent(opcion4MultipleChoice))
-                    .addGroup(panelMultipleChoiceLayout.createSequentialGroup()
-                        .addComponent(opcion1MultipleChoice)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(opcion3MultipleChoice)))
-                .addGap(52, 52, 52))
+                .addGap(40, 40, 40)
+                .addGroup(panelMultipleChoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(opcion2MultipleChoice, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)
+                    .addComponent(opcion1MultipleChoice, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 137, Short.MAX_VALUE)
+                .addGroup(panelMultipleChoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(opcion3MultipleChoice, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)
+                    .addComponent(opcion4MultipleChoice, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(78, 78, 78))
         );
         panelMultipleChoiceLayout.setVerticalGroup(
             panelMultipleChoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelMultipleChoiceLayout.createSequentialGroup()
-                .addContainerGap(17, Short.MAX_VALUE)
+                .addContainerGap(23, Short.MAX_VALUE)
                 .addGroup(panelMultipleChoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelMultipleChoiceLayout.createSequentialGroup()
-                        .addComponent(opcion3MultipleChoice, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(17, 17, 17))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelMultipleChoiceLayout.createSequentialGroup()
-                        .addComponent(opcion1MultipleChoice, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)))
-                .addGroup(panelMultipleChoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(opcion1MultipleChoice, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(opcion3MultipleChoice, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panelMultipleChoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(opcion2MultipleChoice, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(opcion4MultipleChoice, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
-        txtCompletar.addActionListener(this::txtCompletarActionPerformed);
+        txtCompletar5.addActionListener(this::txtCompletarActionPerformed);
 
-        lblCompletar.setText("Completa:");
+        lblCompletar5.setFont(new java.awt.Font("Cambria", 0, 18)); // NOI18N
+        lblCompletar5.setText("Completa:");
 
-        btnCompletar.setText("RESPONDER");
-        btnCompletar.addActionListener(this::btnCompletarActionPerformed);
+        btnCompletar5.setFont(new java.awt.Font("Cambria", 0, 14)); // NOI18N
+        btnCompletar5.setText("RESPONDER");
+        btnCompletar5.addActionListener(this::btnCompletarActionPerformed);
 
-        javax.swing.GroupLayout panelCompletarLayout = new javax.swing.GroupLayout(panelCompletar);
-        panelCompletar.setLayout(panelCompletarLayout);
-        panelCompletarLayout.setHorizontalGroup(
-            panelCompletarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCompletarLayout.createSequentialGroup()
-                .addGroup(panelCompletarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(panelCompletarLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnCompletar))
-                    .addGroup(panelCompletarLayout.createSequentialGroup()
+        javax.swing.GroupLayout panelCompletar5Layout = new javax.swing.GroupLayout(panelCompletar5);
+        panelCompletar5.setLayout(panelCompletar5Layout);
+        panelCompletar5Layout.setHorizontalGroup(
+            panelCompletar5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelCompletar5Layout.createSequentialGroup()
+                .addGroup(panelCompletar5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelCompletar5Layout.createSequentialGroup()
                         .addGap(52, 52, 52)
-                        .addComponent(lblCompletar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
-                        .addComponent(txtCompletar, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(14, 14, 14))
+                        .addComponent(lblCompletar5)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtCompletar5, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelCompletar5Layout.createSequentialGroup()
+                        .addGap(169, 169, 169)
+                        .addComponent(btnCompletar5, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
-        panelCompletarLayout.setVerticalGroup(
-            panelCompletarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelCompletarLayout.createSequentialGroup()
+        panelCompletar5Layout.setVerticalGroup(
+            panelCompletar5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelCompletar5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelCompletarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtCompletar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblCompletar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnCompletar, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(panelCompletar5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtCompletar5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblCompletar5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnCompletar5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblPregunta, javax.swing.GroupLayout.PREFERRED_SIZE, 626, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(110, 110, 110))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(panelVerdaderoFalso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(196, 196, 196)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(panelCompletar5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(panelMultipleChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(68, 68, 68)
-                        .addComponent(lblPregunta, javax.swing.GroupLayout.PREFERRED_SIZE, 685, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(panelMultipleChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(panelCompletar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(200, 200, 200)
+                        .addComponent(panelVerdaderoFalso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(165, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(17, 17, 17)
-                .addComponent(lblPregunta, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(panelMultipleChoice, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panelCompletar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(lblPregunta, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(panelCompletar5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panelMultipleChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(panelVerdaderoFalso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20))
+                .addGap(61, 61, 61))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnVerdaderoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerdaderoActionPerformed
-        procesarRespuesta("TRUE");
-    }//GEN-LAST:event_btnVerdaderoActionPerformed
-
-    private void btnFalsoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFalsoActionPerformed
-       procesarRespuesta("FALSE");
-    }//GEN-LAST:event_btnFalsoActionPerformed
-
-    private void opcion1MultipleChoiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcion1MultipleChoiceActionPerformed
-        // TODO add your handling code here:
-        procesarRespuesta(opcion1MultipleChoice.getText());
-    }//GEN-LAST:event_opcion1MultipleChoiceActionPerformed
-
-    private void opcion2MultipleChoiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcion2MultipleChoiceActionPerformed
-        // TODO add your handling code here:
-        procesarRespuesta(opcion2MultipleChoice.getText());
-    }//GEN-LAST:event_opcion2MultipleChoiceActionPerformed
-
-    private void opcion3MultipleChoiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcion3MultipleChoiceActionPerformed
-        // TODO add your handling code here:
-        procesarRespuesta(opcion3MultipleChoice.getText());
-    }//GEN-LAST:event_opcion3MultipleChoiceActionPerformed
 
     private void opcion4MultipleChoiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcion4MultipleChoiceActionPerformed
         // TODO add your handling code here:
         procesarRespuesta(opcion4MultipleChoice.getText());
     }//GEN-LAST:event_opcion4MultipleChoiceActionPerformed
 
+    private void opcion2MultipleChoiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcion2MultipleChoiceActionPerformed
+        // TODO add your handling code here:
+        procesarRespuesta(opcion2MultipleChoice.getText());
+    }//GEN-LAST:event_opcion2MultipleChoiceActionPerformed
+
+    private void opcion1MultipleChoiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcion1MultipleChoiceActionPerformed
+        // TODO add your handling code here:
+        procesarRespuesta(opcion1MultipleChoice.getText());
+    }//GEN-LAST:event_opcion1MultipleChoiceActionPerformed
+
+    private void opcion3MultipleChoiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_opcion3MultipleChoiceActionPerformed
+        // TODO add your handling code here:
+        procesarRespuesta(opcion3MultipleChoice.getText());
+    }//GEN-LAST:event_opcion3MultipleChoiceActionPerformed
+
+    private void btnFalsoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFalsoActionPerformed
+        procesarRespuesta("FALSE");
+    }//GEN-LAST:event_btnFalsoActionPerformed
+
+    private void btnVerdaderoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerdaderoActionPerformed
+        procesarRespuesta("TRUE");
+    }//GEN-LAST:event_btnVerdaderoActionPerformed
+
     private void btnCompletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCompletarActionPerformed
         // TODO add your handling code here:
-        procesarRespuesta(txtCompletar.getText());
+        procesarRespuesta(txtCompletar5.getText());
     }//GEN-LAST:event_btnCompletarActionPerformed
 
     private void txtCompletarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCompletarActionPerformed
@@ -339,17 +345,37 @@ public class menuPregunta extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCompletar;
+    private javax.swing.JButton btnCompletar1;
+    private javax.swing.JButton btnCompletar2;
+    private javax.swing.JButton btnCompletar3;
+    private javax.swing.JButton btnCompletar4;
+    private javax.swing.JButton btnCompletar5;
     private javax.swing.JButton btnFalso;
     private javax.swing.JButton btnVerdadero;
     private javax.swing.JLabel lblCompletar;
+    private javax.swing.JLabel lblCompletar1;
+    private javax.swing.JLabel lblCompletar2;
+    private javax.swing.JLabel lblCompletar3;
+    private javax.swing.JLabel lblCompletar4;
+    private javax.swing.JLabel lblCompletar5;
     private javax.swing.JLabel lblPregunta;
     private javax.swing.JButton opcion1MultipleChoice;
     private javax.swing.JButton opcion2MultipleChoice;
     private javax.swing.JButton opcion3MultipleChoice;
     private javax.swing.JButton opcion4MultipleChoice;
     private javax.swing.JPanel panelCompletar;
+    private javax.swing.JPanel panelCompletar1;
+    private javax.swing.JPanel panelCompletar2;
+    private javax.swing.JPanel panelCompletar3;
+    private javax.swing.JPanel panelCompletar4;
+    private javax.swing.JPanel panelCompletar5;
     private javax.swing.JPanel panelMultipleChoice;
     private javax.swing.JPanel panelVerdaderoFalso;
     private javax.swing.JTextField txtCompletar;
+    private javax.swing.JTextField txtCompletar1;
+    private javax.swing.JTextField txtCompletar2;
+    private javax.swing.JTextField txtCompletar3;
+    private javax.swing.JTextField txtCompletar4;
+    private javax.swing.JTextField txtCompletar5;
     // End of variables declaration//GEN-END:variables
 }
