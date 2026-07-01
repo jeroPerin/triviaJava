@@ -38,9 +38,11 @@ public class menuInicioSolitario extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jLabel1.setFont(new java.awt.Font("Cambria", 0, 36)); // NOI18N
         jLabel1.setText("ESTAS POR INICIAR UN SOLITARIO");
 
-        btnJugar.setText("JUGAR");
+        btnJugar.setFont(new java.awt.Font("Cambria", 0, 36)); // NOI18N
+        btnJugar.setText("INICIAR PARTIDA");
         btnJugar.addActionListener(this::btnJugarActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -48,23 +50,23 @@ public class menuInicioSolitario extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap(279, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(99, 99, 99)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(150, 150, 150)
-                        .addComponent(btnJugar)))
-                .addContainerGap(117, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(233, 233, 233))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnJugar, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(339, 339, 339))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(104, 104, 104)
+                .addGap(43, 43, 43)
                 .addComponent(jLabel1)
-                .addGap(70, 70, 70)
-                .addComponent(btnJugar)
-                .addContainerGap(87, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 229, Short.MAX_VALUE)
+                .addComponent(btnJugar, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(136, 136, 136))
         );
 
         pack();
