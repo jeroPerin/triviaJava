@@ -28,7 +28,7 @@ import java.sql.Statement;
  * @author Alumno
  */
 public class Conexion {
-      Connection conectar = null;
+    Connection conectar = null;
 
     private String servidor;
     private String database ;
@@ -93,8 +93,3 @@ public class Conexion {
         st.executeUpdate(sql);
         }
 }
-
-
-
-
-
