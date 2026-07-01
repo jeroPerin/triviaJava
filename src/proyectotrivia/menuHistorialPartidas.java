@@ -24,6 +24,7 @@ public class menuHistorialPartidas extends javax.swing.JFrame {
      */
     public menuHistorialPartidas() {
         initComponents();
+        actualizarTablas();
     }
 
     public void actualizarTablas(){
@@ -37,7 +38,7 @@ public class menuHistorialPartidas extends javax.swing.JFrame {
             );
             
             
-            String sql = "SELECT * FROM partidassolitario";
+            String sql = "SELECT puntajeFinal FROM partidassolitario";  // despues join con usuarios
             
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(sql);
@@ -47,27 +48,28 @@ public class menuHistorialPartidas extends javax.swing.JFrame {
             modelo.setRowCount(0);
             while(rs.next()){
                 modelo.addRow(new Object[]{
-                    rs.getInt("idUrgencia"),
-                    rs.getString("nombrePaciente"),
-                    rs.getString("descripcion"),
-                    rs.getInt("idAmbulancia"),
-                    rs.getString("estadoUrgencia")
+                   // rs.getString("nombreUsuario"),
+                    rs.getInt("puntajeFinal"),
+                    
                         
                         
                 });
             }
             
+            sql = "SELECT puntajeFinal1,puntajeFinal2 FROM partidasmultijugador";  // despues join con usuarios
+            
+             st = con.createStatement();
+            rs = st.executeQuery(sql);
             
             
-            rs= c.consultar("SELECT * FROM ambulancias");
             DefaultTableModel modelo2 = (DefaultTableModel) tablaDuelo.getModel();
             modelo2.setRowCount(0);
             while(rs.next()){
                 
                 modelo2.addRow(new Object[]{
                 
-                    rs.getInt("idAmbulancia"),
-                    rs.getString("estadoAmbulancia")
+                        rs.getInt("puntajeFinal1"),
+                       rs.getInt("puntajeFinal2"),
                 
                 });
                 
@@ -112,13 +114,13 @@ public class menuHistorialPartidas extends javax.swing.JFrame {
 
         tablaSolitario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "PuntajeFinal", "Title 2"
             }
         ));
         jScrollPane1.setViewportView(tablaSolitario);
@@ -131,7 +133,7 @@ public class menuHistorialPartidas extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "PuntajeFinal1", "PuntajeFinal2", "null", "Title 4"
             }
         ));
         jScrollPane2.setViewportView(tablaDuelo);
