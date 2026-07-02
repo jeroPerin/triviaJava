@@ -17,7 +17,7 @@ public class menuPregunta extends javax.swing.JFrame {
        private boolean respuestaCorrecta;
        private Timer timer;
        
-    public menuPregunta(Partidas partida, int idJugador) {
+    public menuPregunta(Partidas partida, int idJugador,int numJugador) {
         initComponents();
         
         p=partida;
@@ -26,6 +26,10 @@ public class menuPregunta extends javax.swing.JFrame {
             actualizarPantalla();
         });
          timer.start();
+         
+         lblJugador.setText("J" + numJugador);
+         
+         
         }
 
         
@@ -141,20 +145,21 @@ public class menuPregunta extends javax.swing.JFrame {
         panelVerdaderoFalso = new javax.swing.JPanel();
         btnVerdadero = new javax.swing.JButton();
         btnFalso = new javax.swing.JButton();
+        lblJugador = new javax.swing.JLabel();
+        panelCompletar5 = new javax.swing.JPanel();
+        txtCompletar5 = new javax.swing.JTextField();
+        lblCompletar5 = new javax.swing.JLabel();
+        btnCompletar5 = new javax.swing.JButton();
         panelMultipleChoice = new javax.swing.JPanel();
         opcion3MultipleChoice = new javax.swing.JButton();
         opcion1MultipleChoice = new javax.swing.JButton();
         opcion2MultipleChoice = new javax.swing.JButton();
         opcion4MultipleChoice = new javax.swing.JButton();
-        panelCompletar5 = new javax.swing.JPanel();
-        txtCompletar5 = new javax.swing.JTextField();
-        lblCompletar5 = new javax.swing.JLabel();
-        btnCompletar5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setLocation(new java.awt.Point(650, 300));
 
-        lblPregunta.setFont(new java.awt.Font("Cambria", 0, 24)); // NOI18N
+        lblPregunta.setFont(new java.awt.Font("Cambria", 0, 18)); // NOI18N
         lblPregunta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         btnVerdadero.setFont(new java.awt.Font("Cambria", 0, 18)); // NOI18N
@@ -184,6 +189,45 @@ public class menuPregunta extends javax.swing.JFrame {
                     .addComponent(btnFalso, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnVerdadero, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31))
+        );
+
+        lblJugador.setFont(new java.awt.Font("Cambria", 0, 18)); // NOI18N
+
+        txtCompletar5.addActionListener(this::txtCompletarActionPerformed);
+
+        lblCompletar5.setFont(new java.awt.Font("Cambria", 0, 18)); // NOI18N
+        lblCompletar5.setText("Completa:");
+
+        btnCompletar5.setFont(new java.awt.Font("Cambria", 0, 14)); // NOI18N
+        btnCompletar5.setText("RESPONDER");
+        btnCompletar5.addActionListener(this::btnCompletarActionPerformed);
+
+        javax.swing.GroupLayout panelCompletar5Layout = new javax.swing.GroupLayout(panelCompletar5);
+        panelCompletar5.setLayout(panelCompletar5Layout);
+        panelCompletar5Layout.setHorizontalGroup(
+            panelCompletar5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelCompletar5Layout.createSequentialGroup()
+                .addGroup(panelCompletar5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelCompletar5Layout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addComponent(lblCompletar5)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtCompletar5, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelCompletar5Layout.createSequentialGroup()
+                        .addGap(169, 169, 169)
+                        .addComponent(btnCompletar5, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
+        panelCompletar5Layout.setVerticalGroup(
+            panelCompletar5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelCompletar5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelCompletar5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtCompletar5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblCompletar5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnCompletar5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         opcion3MultipleChoice.setFont(new java.awt.Font("Cambria", 0, 18)); // NOI18N
@@ -216,7 +260,7 @@ public class menuPregunta extends javax.swing.JFrame {
         panelMultipleChoiceLayout.setVerticalGroup(
             panelMultipleChoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelMultipleChoiceLayout.createSequentialGroup()
-                .addContainerGap(23, Short.MAX_VALUE)
+                .addContainerGap(72, Short.MAX_VALUE)
                 .addGroup(panelMultipleChoiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(opcion1MultipleChoice, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(opcion3MultipleChoice, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -227,75 +271,45 @@ public class menuPregunta extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        txtCompletar5.addActionListener(this::txtCompletarActionPerformed);
-
-        lblCompletar5.setFont(new java.awt.Font("Cambria", 0, 18)); // NOI18N
-        lblCompletar5.setText("Completa:");
-
-        btnCompletar5.setFont(new java.awt.Font("Cambria", 0, 14)); // NOI18N
-        btnCompletar5.setText("RESPONDER");
-        btnCompletar5.addActionListener(this::btnCompletarActionPerformed);
-
-        javax.swing.GroupLayout panelCompletar5Layout = new javax.swing.GroupLayout(panelCompletar5);
-        panelCompletar5.setLayout(panelCompletar5Layout);
-        panelCompletar5Layout.setHorizontalGroup(
-            panelCompletar5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelCompletar5Layout.createSequentialGroup()
-                .addGroup(panelCompletar5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelCompletar5Layout.createSequentialGroup()
-                        .addGap(52, 52, 52)
-                        .addComponent(lblCompletar5)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtCompletar5, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelCompletar5Layout.createSequentialGroup()
-                        .addGap(169, 169, 169)
-                        .addComponent(btnCompletar5, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(56, Short.MAX_VALUE))
-        );
-        panelCompletar5Layout.setVerticalGroup(
-            panelCompletar5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelCompletar5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(panelCompletar5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtCompletar5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblCompletar5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnCompletar5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
-        );
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblPregunta, javax.swing.GroupLayout.PREFERRED_SIZE, 626, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(110, 110, 110))
+                .addGap(165, 165, 165)
+                .addComponent(lblPregunta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(196, 196, 196)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(panelCompletar5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(panelMultipleChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(264, 264, 264)
+                        .addComponent(panelVerdaderoFalso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(200, 200, 200)
-                        .addComponent(panelVerdaderoFalso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(165, Short.MAX_VALUE))
+                        .addGap(134, 134, 134)
+                        .addComponent(panelMultipleChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(379, 379, 379)
+                        .addComponent(panelCompletar5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(258, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(lblPregunta, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(panelCompletar5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lblJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(lblPregunta, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(74, 74, 74)
                 .addComponent(panelMultipleChoice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(33, 33, 33)
+                .addComponent(panelCompletar5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(63, 63, 63)
                 .addComponent(panelVerdaderoFalso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(61, 61, 61))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -344,38 +358,19 @@ public class menuPregunta extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCompletar;
-    private javax.swing.JButton btnCompletar1;
-    private javax.swing.JButton btnCompletar2;
-    private javax.swing.JButton btnCompletar3;
-    private javax.swing.JButton btnCompletar4;
     private javax.swing.JButton btnCompletar5;
     private javax.swing.JButton btnFalso;
     private javax.swing.JButton btnVerdadero;
-    private javax.swing.JLabel lblCompletar;
-    private javax.swing.JLabel lblCompletar1;
-    private javax.swing.JLabel lblCompletar2;
-    private javax.swing.JLabel lblCompletar3;
-    private javax.swing.JLabel lblCompletar4;
     private javax.swing.JLabel lblCompletar5;
+    private javax.swing.JLabel lblJugador;
     private javax.swing.JLabel lblPregunta;
     private javax.swing.JButton opcion1MultipleChoice;
     private javax.swing.JButton opcion2MultipleChoice;
     private javax.swing.JButton opcion3MultipleChoice;
     private javax.swing.JButton opcion4MultipleChoice;
-    private javax.swing.JPanel panelCompletar;
-    private javax.swing.JPanel panelCompletar1;
-    private javax.swing.JPanel panelCompletar2;
-    private javax.swing.JPanel panelCompletar3;
-    private javax.swing.JPanel panelCompletar4;
     private javax.swing.JPanel panelCompletar5;
     private javax.swing.JPanel panelMultipleChoice;
     private javax.swing.JPanel panelVerdaderoFalso;
-    private javax.swing.JTextField txtCompletar;
-    private javax.swing.JTextField txtCompletar1;
-    private javax.swing.JTextField txtCompletar2;
-    private javax.swing.JTextField txtCompletar3;
-    private javax.swing.JTextField txtCompletar4;
     private javax.swing.JTextField txtCompletar5;
     // End of variables declaration//GEN-END:variables
 }
