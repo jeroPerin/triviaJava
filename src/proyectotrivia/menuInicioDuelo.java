@@ -4,7 +4,9 @@
  */
 package proyectotrivia;
 
+import java.awt.Dimension;
 import java.awt.Image;
+import java.awt.Toolkit;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.ImageIcon;
@@ -209,8 +211,16 @@ public class menuInicioDuelo extends javax.swing.JFrame {
 
         menuPregunta m1 = new menuPregunta(p,Global.getIdUsuario(),1);
         menuPregunta m2 = new menuPregunta(p,idJugador2,2);
-        m1.setLocationRelativeTo(null);
-        m2.setLocationRelativeTo(null);
+        Dimension pantalla = Toolkit.getDefaultToolkit().getScreenSize();
+
+        int ancho = m1.getWidth();
+        int alto = m1.getHeight();
+
+        m1.setLocation((pantalla.width / 2) - ancho - 10,
+                       (pantalla.height - alto) / 2);
+
+        m2.setLocation((pantalla.width / 2) + 10,
+                       (pantalla.height - alto) / 2);
 
         m1.setVisible(true);
         m2.setVisible(true);
