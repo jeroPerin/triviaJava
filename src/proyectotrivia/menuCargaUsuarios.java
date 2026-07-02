@@ -5,6 +5,7 @@
 package proyectotrivia;
 import javax.swing.*;
 import java.sql.*;
+import java.awt.Cursor;
 
 
 /**
@@ -20,7 +21,10 @@ public class menuCargaUsuarios extends javax.swing.JFrame {
      */
     public menuCargaUsuarios() {
         initComponents();
-    }
+
+    btnLogin.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+    btnRegister.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -36,8 +40,8 @@ public class menuCargaUsuarios extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         txtNombre = new javax.swing.JTextField();
-        btnLogin = new javax.swing.JButton();
-        btnRegister = new javax.swing.JButton();
+        btnLogin = new RoundedButton();
+        btnRegister = new RoundedButton();
         txtContraseña = new javax.swing.JPasswordField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -45,12 +49,12 @@ public class menuCargaUsuarios extends javax.swing.JFrame {
         jLabel2.setText("jLabel2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setBackground(new java.awt.Color(204, 204, 204));
+        setBackground(new java.awt.Color(51, 204, 255));
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(153, 204, 255));
 
         jLabel1.setFont(new java.awt.Font("Sitka Text", 1, 48)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("LOGIN");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -70,9 +74,10 @@ public class menuCargaUsuarios extends javax.swing.JFrame {
                 .addGap(18, 18, 18))
         );
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBackground(new java.awt.Color(30, 58, 95));
+        jPanel2.setForeground(new java.awt.Color(30, 30, 30));
 
-        txtNombre.setBackground(new java.awt.Color(255, 255, 255));
+        txtNombre.setBackground(new java.awt.Color(153, 204, 255));
         txtNombre.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         txtNombre.addActionListener(this::txtNombreActionPerformed);
 
@@ -88,16 +93,16 @@ public class menuCargaUsuarios extends javax.swing.JFrame {
         btnRegister.setText("REGISTER");
         btnRegister.addActionListener(this::btnRegisterActionPerformed);
 
-        txtContraseña.setBackground(new java.awt.Color(255, 255, 255));
+        txtContraseña.setBackground(new java.awt.Color(153, 204, 255));
         txtContraseña.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         txtContraseña.setForeground(new java.awt.Color(0, 0, 0));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Username");
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Password");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -110,11 +115,11 @@ public class menuCargaUsuarios extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addComponent(jLabel3)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(btnLogin)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                            .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnRegister))
-                        .addComponent(txtNombre)
+                        .addComponent(txtNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE)
                         .addComponent(txtContraseña)))
                 .addContainerGap(236, Short.MAX_VALUE))
         );
@@ -129,11 +134,11 @@ public class menuCargaUsuarios extends javax.swing.JFrame {
                 .addComponent(jLabel4)
                 .addGap(3, 3, 3)
                 .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnLogin)
-                    .addComponent(btnRegister))
-                .addContainerGap(123, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnLogin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(155, 155, 155))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

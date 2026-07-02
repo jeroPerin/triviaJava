@@ -6,7 +6,8 @@ package proyectotrivia;
 
 import java.awt.Image;
 import javax.swing.ImageIcon;
-
+import java.awt.*;
+import javax.swing.JOptionPane;
 /**
  *
  * @author JERO
@@ -21,6 +22,8 @@ public class menuPrincipal extends javax.swing.JFrame {
     public menuPrincipal() {
         
         initComponents();
+        
+        getContentPane().setBackground(new java.awt.Color(30, 58, 95));
          
         ImageIcon icon = new ImageIcon(
          getClass().getResource("/proyectotrivia/messi celebrando.png")
@@ -42,20 +45,18 @@ public class menuPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblTitulo = new javax.swing.JLabel();
-        btnModo1 = new javax.swing.JButton();
-        btnModoDuelo = new javax.swing.JButton();
+        btnModo1 = new RoundedButton();
+        btnModoDuelo = new RoundedButton();
         lblImagen = new javax.swing.JLabel();
-        btnRegistro = new javax.swing.JButton();
-        btnInfo = new javax.swing.JButton();
-        btnHistorial = new javax.swing.JButton();
+        btnRegistro = new RoundedButton();
+        btnInfo = new RoundedButton();
+        btnHistorial = new RoundedButton();
+        jPanel1 = new javax.swing.JPanel();
+        lblTitulo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(204, 204, 204));
         setLocation(new java.awt.Point(0, 0));
-
-        lblTitulo.setBackground(new java.awt.Color(51, 204, 255));
-        lblTitulo.setFont(new java.awt.Font("Cambria", 0, 48)); // NOI18N
-        lblTitulo.setText("TRIVIA UAA GAME");
 
         btnModo1.setFont(new java.awt.Font("Cambria", 0, 36)); // NOI18N
         btnModo1.setText("MODO SOLITARIO");
@@ -71,12 +72,37 @@ public class menuPrincipal extends javax.swing.JFrame {
         btnRegistro.setText("REGISTRAR USUARIO");
         btnRegistro.addActionListener(this::btnRegistroActionPerformed);
 
-        btnInfo.setFont(new java.awt.Font("Cambria", 0, 18)); // NOI18N
+        btnInfo.setFont(new java.awt.Font("Cambria", 0, 24)); // NOI18N
         btnInfo.setText("INFORMACION");
+        btnInfo.addActionListener(this::btnInfoActionPerformed);
 
         btnHistorial.setFont(new java.awt.Font("Cambria", 0, 36)); // NOI18N
         btnHistorial.setText("HISTORIAL PARTIDAS");
         btnHistorial.addActionListener(this::btnHistorialActionPerformed);
+
+        jPanel1.setBackground(new java.awt.Color(153, 204, 255));
+
+        lblTitulo.setBackground(new java.awt.Color(51, 204, 255));
+        lblTitulo.setFont(new java.awt.Font("Showcard Gothic", 0, 60)); // NOI18N
+        lblTitulo.setForeground(new java.awt.Color(255, 255, 255));
+        lblTitulo.setText("TRIVIA UAA GAME");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(560, 560, 560)
+                .addComponent(lblTitulo)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(40, Short.MAX_VALUE)
+                .addComponent(lblTitulo)
+                .addGap(14, 14, 14))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -84,47 +110,39 @@ public class menuPrincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblTitulo)
-                .addGap(610, 610, 610))
+                .addComponent(btnInfo)
+                .addGap(35, 35, 35))
             .addGroup(layout.createSequentialGroup()
-                .addGap(46, 46, 46)
+                .addGap(64, 64, 64)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnModo1, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnModoDuelo, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnHistorial, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(160, 160, 160)
-                        .addComponent(lblImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 940, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(116, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(35, 35, 35))))
+                    .addComponent(btnModo1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(btnHistorial, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 375, Short.MAX_VALUE)
+                        .addComponent(btnRegistro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnModoDuelo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(160, 160, 160)
+                .addComponent(lblImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 940, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(116, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addComponent(lblTitulo)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addComponent(btnModo1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(62, 62, 62)
-                        .addComponent(btnModoDuelo, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnModo1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(66, 66, 66)
+                        .addComponent(btnModoDuelo, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(58, 58, 58)
+                        .addComponent(btnRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(55, 55, 55)
-                        .addComponent(btnRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(52, 52, 52)
-                        .addComponent(btnHistorial, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(68, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(63, 63, 63)
-                        .addComponent(lblImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 459, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(25, 25, 25))))
+                        .addComponent(btnHistorial, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 459, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                .addComponent(btnInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25))
         );
 
         pack();
@@ -163,6 +181,18 @@ public class menuPrincipal extends javax.swing.JFrame {
             dispose();
     }//GEN-LAST:event_btnHistorialActionPerformed
 
+    private void btnInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInfoActionPerformed
+        // TODO add your handling code here:
+        String mensaje = "¡Bienvenido a nuestro Juego de Trivia!\n\n"
+                + "Cómo Jugar:\n\n"
+                + "1. Modo Solitario: En este modo, jugarás contra tu propia habilidad. Responde las 5 preguntas como puedas y trata de conseguir la máxima puntuación.\n\n"
+                + "2. Modo Duelo: En este modo, te enfrentarás a otro jugador en una competencia uno a uno. Cada respuesta correcta suma 100 puntos, y el que llegue más lejos será el ganador.\n\n"
+                + "¡Demuestra tu conocimiento y diviértete con nosotros!"
+                + "\n\n\nDesarrollada por Ezequiel Larrea y Jerónimo Perín, alumnos de la Universidad Atlantida Argentina.";
+        
+        JOptionPane.showMessageDialog(null, mensaje, "Información del Juego", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_btnInfoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -194,6 +224,7 @@ public class menuPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnModo1;
     private javax.swing.JButton btnModoDuelo;
     private javax.swing.JButton btnRegistro;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblImagen;
     private javax.swing.JLabel lblTitulo;
     // End of variables declaration//GEN-END:variables

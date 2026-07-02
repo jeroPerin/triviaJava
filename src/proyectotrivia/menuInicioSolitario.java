@@ -6,6 +6,7 @@ package proyectotrivia;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
+import java.awt.Cursor;
 /**
  *
  * @author JERO
@@ -21,7 +22,9 @@ public class menuInicioSolitario extends javax.swing.JFrame {
         
         initComponents();
         
+        getContentPane().setBackground(new java.awt.Color(30, 58, 95));
         
+        btnJugar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
     }
 
     /**
@@ -34,14 +37,15 @@ public class menuInicioSolitario extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        btnJugar = new javax.swing.JButton();
+        btnJugar = new RoundedButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Cambria", 0, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Sitka Text", 0, 60)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("ESTAS POR INICIAR UN SOLITARIO");
 
-        btnJugar.setFont(new java.awt.Font("Cambria", 0, 36)); // NOI18N
+        btnJugar.setFont(new java.awt.Font("Cambria", 0, 48)); // NOI18N
         btnJugar.setText("INICIAR PARTIDA");
         btnJugar.addActionListener(this::btnJugarActionPerformed);
 
@@ -50,22 +54,23 @@ public class menuInicioSolitario extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(250, 250, 250)
-                .addComponent(jLabel1)
-                .addContainerGap(262, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnJugar, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(359, 359, 359))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(121, 121, 121)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(416, 416, 416)
+                        .addComponent(btnJugar, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(135, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(52, 52, 52)
+                .addGap(80, 80, 80)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 221, Short.MAX_VALUE)
+                .addGap(112, 112, 112)
                 .addComponent(btnJugar, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(135, 135, 135))
+                .addContainerGap(179, Short.MAX_VALUE))
         );
 
         pack();
