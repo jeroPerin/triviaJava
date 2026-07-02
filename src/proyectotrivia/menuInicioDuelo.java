@@ -56,13 +56,14 @@ public class menuInicioDuelo extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Cambria", 0, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Cambria", 0, 48)); // NOI18N
         jLabel1.setText("ESTAS POR INICIAR UN DUELO");
 
         jLabel8.setFont(new java.awt.Font("Cambria", 0, 24)); // NOI18N
-        jLabel8.setText("INGRESE QUIEN SERA EL JUGADOR NRO 2");
+        jLabel8.setText("ANTES DE JUGAR INGRESE QUIEN SERA EL JUGADOR NRO 2");
 
         jPanel1.setBackground(new java.awt.Color(153, 204, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         btnIniciar.setFont(new java.awt.Font("Cambria", 0, 24)); // NOI18N
         btnIniciar.setText("INICIAR PARTIDA");
@@ -106,7 +107,7 @@ public class menuInicioDuelo extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel6)
-                        .addGap(285, 285, 285)
+                        .addGap(215, 215, 215)
                         .addComponent(jLabel7)))
                 .addGap(136, 136, 136)
                 .addComponent(btnChequearJugador)
@@ -139,34 +140,33 @@ public class menuInicioDuelo extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(66, 66, 66)
-                .addComponent(btnVolver)
-                .addGap(0, 1072, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(441, 441, 441)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(116, 116, 116)
+                        .addGap(56, 56, 56)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(470, 470, 470)
-                        .addComponent(jLabel8)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(455, 455, 455)
+                        .addComponent(btnVolver))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(341, 341, 341)
+                        .addComponent(jLabel8))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(330, 330, 330)
+                        .addComponent(jLabel1)))
+                .addContainerGap(54, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(82, 82, 82)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 137, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 118, Short.MAX_VALUE)
                 .addComponent(jLabel8)
-                .addGap(80, 80, 80)
+                .addGap(79, 79, 79)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
+                .addGap(35, 35, 35)
                 .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
+                .addGap(17, 17, 17))
         );
 
         pack();
