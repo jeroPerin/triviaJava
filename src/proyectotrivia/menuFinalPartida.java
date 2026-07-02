@@ -20,17 +20,18 @@ public class menuFinalPartida extends javax.swing.JFrame {
      */
     public menuFinalPartida(Partidas p) {
         initComponents();
-            panelSolitario.setVisible(false);
+            lblPuntajeSolitario.setVisible(false);
          panelMultijugador.setVisible(false);
         
        
         
         if(p instanceof PartidasSolitario)
         {   
-            panelSolitario.setVisible(true);
+            
             int a =  ((PartidasSolitario) p).getPuntajeFinal();
             
             lblPuntajeSolitario.setText(Integer.toString(a));
+            lblPuntajeSolitario.setVisible(true);
             
         }else{
         panelMultijugador.setVisible(true);
@@ -56,58 +57,28 @@ public class menuFinalPartida extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         btnVolverMenu = new javax.swing.JButton();
-        panelSolitario = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        lblPuntajeSolitario = new javax.swing.JLabel();
         panelMultijugador = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         lblPuntaje1 = new javax.swing.JLabel();
         lblPuntaje2 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        lblPuntajeSolitario = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Cambria", 0, 48)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Cambria", 0, 60)); // NOI18N
         jLabel1.setText("PARTIDA FINALIZADA");
 
         btnVolverMenu.setFont(new java.awt.Font("Cambria", 0, 36)); // NOI18N
         btnVolverMenu.setText("Volver Al Menu Principal");
         btnVolverMenu.addActionListener(this::btnVolverMenuActionPerformed);
 
-        jLabel2.setFont(new java.awt.Font("Cambria", 0, 48)); // NOI18N
-        jLabel2.setText(" PUNTAJE FINAL:");
+        jLabel3.setFont(new java.awt.Font("Cambria", 0, 36)); // NOI18N
+        jLabel3.setText("JUGADOR 1");
 
-        lblPuntajeSolitario.setFont(new java.awt.Font("Cambria", 0, 48)); // NOI18N
-
-        javax.swing.GroupLayout panelSolitarioLayout = new javax.swing.GroupLayout(panelSolitario);
-        panelSolitario.setLayout(panelSolitarioLayout);
-        panelSolitarioLayout.setHorizontalGroup(
-            panelSolitarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelSolitarioLayout.createSequentialGroup()
-                .addContainerGap(295, Short.MAX_VALUE)
-                .addGroup(panelSolitarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelSolitarioLayout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(216, 216, 216))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelSolitarioLayout.createSequentialGroup()
-                        .addComponent(lblPuntajeSolitario, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(328, 328, 328))))
-        );
-        panelSolitarioLayout.setVerticalGroup(
-            panelSolitarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelSolitarioLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addComponent(lblPuntajeSolitario, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(12, Short.MAX_VALUE))
-        );
-
-        jLabel3.setFont(new java.awt.Font("Cambria", 0, 24)); // NOI18N
-        jLabel3.setText("JUGADOR:");
-
-        jLabel4.setFont(new java.awt.Font("Cambria", 0, 24)); // NOI18N
-        jLabel4.setText("JUGADOR:");
+        jLabel4.setFont(new java.awt.Font("Cambria", 0, 36)); // NOI18N
+        jLabel4.setText("JUGADOR 2");
 
         lblPuntaje1.setFont(new java.awt.Font("Cambria", 0, 24)); // NOI18N
 
@@ -118,20 +89,18 @@ public class menuFinalPartida extends javax.swing.JFrame {
         panelMultijugadorLayout.setHorizontalGroup(
             panelMultijugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelMultijugadorLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
                 .addGroup(panelMultijugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(panelMultijugadorLayout.createSequentialGroup()
-                        .addGap(11, 11, 11)
-                        .addComponent(lblPuntaje1, javax.swing.GroupLayout.DEFAULT_SIZE, 338, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 211, Short.MAX_VALUE)
+                        .addGap(31, 31, 31)
+                        .addComponent(lblPuntaje1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(panelMultijugadorLayout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 420, Short.MAX_VALUE)))
                 .addGroup(panelMultijugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelMultijugadorLayout.createSequentialGroup()
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(109, 109, 109))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelMultijugadorLayout.createSequentialGroup()
-                        .addComponent(lblPuntaje2, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(124, 124, 124))))
+                    .addComponent(jLabel4)
+                    .addComponent(lblPuntaje2, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(60, 60, 60))
         );
         panelMultijugadorLayout.setVerticalGroup(
             panelMultijugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -140,48 +109,59 @@ public class menuFinalPartida extends javax.swing.JFrame {
                 .addGroup(panelMultijugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addGroup(panelMultijugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelMultijugadorLayout.createSequentialGroup()
-                        .addComponent(lblPuntaje1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(68, 68, 68))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelMultijugadorLayout.createSequentialGroup()
-                        .addComponent(lblPuntaje2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(19, 19, 19))))
+                    .addComponent(lblPuntaje1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblPuntaje2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(68, 68, 68))
         );
+
+        jLabel2.setFont(new java.awt.Font("Cambria", 0, 48)); // NOI18N
+        jLabel2.setText(" PUNTAJE FINAL");
+
+        lblPuntajeSolitario.setFont(new java.awt.Font("Cambria", 0, 48)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(351, 351, 351)
+                .addComponent(jLabel2)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
-                        .addComponent(panelSolitario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(174, 174, 174)
-                        .addComponent(panelMultijugador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(299, 299, 299)
+                        .addGap(263, 263, 263)
                         .addComponent(btnVolverMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 506, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(296, 296, 296)
-                        .addComponent(jLabel1)))
-                .addGap(90, 90, 90))
+                        .addGap(421, 421, 421)
+                        .addComponent(lblPuntajeSolitario, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(92, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(223, 223, 223))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(panelMultijugador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(81, 81, 81))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(36, 36, 36)
+                .addGap(34, 34, 34)
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(panelSolitario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(81, 81, 81)
+                .addGap(41, 41, 41)
+                .addComponent(jLabel2)
+                .addGap(40, 40, 40)
+                .addComponent(lblPuntajeSolitario, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(57, 57, 57)
                 .addComponent(panelMultijugador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
+                .addGap(130, 130, 130)
                 .addComponent(btnVolverMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(72, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -228,6 +208,5 @@ public class menuFinalPartida extends javax.swing.JFrame {
     private javax.swing.JLabel lblPuntaje2;
     private javax.swing.JLabel lblPuntajeSolitario;
     private javax.swing.JPanel panelMultijugador;
-    private javax.swing.JPanel panelSolitario;
     // End of variables declaration//GEN-END:variables
 }
