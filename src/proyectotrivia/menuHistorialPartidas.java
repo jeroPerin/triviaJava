@@ -38,7 +38,9 @@ public class menuHistorialPartidas extends javax.swing.JFrame {
             );
             
             
-            String sql = "SELECT puntajeFinal FROM partidassolitario";  // despues join con usuarios
+            String sql = "SELECT p.idPartida, u.nombreUsuario AS jugador, p.puntajeFinal " +
+    "FROM partidassolitario p " +
+    "JOIN usuarios u ON p.idUsuario = u.idUsuario";;  // despues join con usuarios
             
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(sql);
@@ -48,15 +50,20 @@ public class menuHistorialPartidas extends javax.swing.JFrame {
             modelo.setRowCount(0);
             while(rs.next()){
                 modelo.addRow(new Object[]{
-                   // rs.getString("nombreUsuario"),
-                    rs.getInt("puntajeFinal"),
+                     rs.getString("jugador"),
+                    rs.getInt("puntajeFinal")
                     
                         
                         
                 });
             }
             
-            sql = "SELECT puntajeFinal1,puntajeFinal2 FROM partidasmultijugador";  // despues join con usuarios
+            sql = 
+    "SELECT p.idPartida, u1.nombreUsuario AS jugador1, p.puntajeFinal1, " +
+    "u2.nombreUsuario AS jugador2, p.puntajeFinal2 " +
+    "FROM partidasmultijugador p " +
+    "JOIN usuarios u1 ON p.idUsuario1 = u1.idUsuario " +
+    "JOIN usuarios u2 ON p.idUsuario2 = u2.idUsuario";
             
              st = con.createStatement();
             rs = st.executeQuery(sql);
@@ -67,9 +74,11 @@ public class menuHistorialPartidas extends javax.swing.JFrame {
             while(rs.next()){
                 
                 modelo2.addRow(new Object[]{
-                
+                         rs.getString("jugador1"),
+                          
                         rs.getInt("puntajeFinal1"),
-                       rs.getInt("puntajeFinal2"),
+                        rs.getString("jugador2"),
+                       rs.getInt("puntajeFinal2")
                 
                 });
                 
@@ -120,7 +129,7 @@ public class menuHistorialPartidas extends javax.swing.JFrame {
                 {null, null}
             },
             new String [] {
-                "PuntajeFinal", "Title 2"
+                "JUGADOR", "PUNTAJE FINAL"
             }
         ));
         jScrollPane1.setViewportView(tablaSolitario);
@@ -133,7 +142,7 @@ public class menuHistorialPartidas extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "PuntajeFinal1", "PuntajeFinal2", "null", "Title 4"
+                "JUGADOR 1", "PUNTAJE J1", "JUGADOR 2", "PUNTAJE J2"
             }
         ));
         jScrollPane2.setViewportView(tablaDuelo);
