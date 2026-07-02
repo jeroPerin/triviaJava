@@ -27,15 +27,6 @@ public class menuInicioDuelo extends javax.swing.JFrame {
     public menuInicioDuelo() {
         initComponents();
         
-        ImageIcon icon = new ImageIcon(
-         getClass().getResource("/proyectotrivia/iconoDuelo.png")
-        );
-
-        Image img = icon.getImage();
-        Image imgEscalada = img.getScaledInstance(250, 200, Image.SCALE_SMOOTH);
-
-         lblImagen.setIcon(new ImageIcon(imgEscalada));
-          lblImagen2.setIcon(new ImageIcon(imgEscalada));
         
         
     }
@@ -51,8 +42,6 @@ public class menuInicioDuelo extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        lblImagen = new javax.swing.JLabel();
-        lblImagen2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         btnIniciar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
@@ -70,10 +59,6 @@ public class menuInicioDuelo extends javax.swing.JFrame {
 
         jLabel8.setFont(new java.awt.Font("Cambria", 0, 24)); // NOI18N
         jLabel8.setText("INGRESE QUIEN SERA EL JUGADOR NRO 2");
-
-        lblImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyectotrivia/iconoDuelo.png"))); // NOI18N
-
-        lblImagen2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyectotrivia/iconoDuelo.png"))); // NOI18N
 
         jPanel1.setBackground(new java.awt.Color(153, 204, 255));
 
@@ -96,7 +81,7 @@ public class menuInicioDuelo extends javax.swing.JFrame {
         jLabel7.setText("CONTRASEÑA");
 
         btnChequearJugador.setFont(new java.awt.Font("Cambria", 0, 18)); // NOI18N
-        btnChequearJugador.setText("CHEQUEAR JUGADOR");
+        btnChequearJugador.setText("LOGUEAR JUGADOR");
         btnChequearJugador.addActionListener(this::btnChequearJugadorActionPerformed);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -114,16 +99,16 @@ public class menuInicioDuelo extends javax.swing.JFrame {
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(107, 107, 107)
                         .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 235, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 200, Short.MAX_VALUE)
                         .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel6)
                         .addGap(285, 285, 285)
                         .addComponent(jLabel7)))
-                .addGap(380, 380, 380)
+                .addGap(136, 136, 136)
                 .addComponent(btnChequearJugador)
-                .addGap(99, 99, 99))
+                .addGap(82, 82, 82))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -152,44 +137,32 @@ public class menuInicioDuelo extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(54, 54, 54)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(37, 37, 37)
-                                .addComponent(jLabel1))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(64, 64, 64)
-                                .addComponent(jLabel8)))
-                        .addGap(58, 58, 58)
-                        .addComponent(lblImagen2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addGap(24, 24, 24))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(layout.createSequentialGroup()
                 .addGap(66, 66, 66)
                 .addComponent(btnVolver)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 1072, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(441, 441, 441)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(116, 116, 116)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(470, 470, 470)
+                        .addComponent(jLabel8)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblImagen2, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(52, 52, 52)
-                            .addComponent(jLabel1)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel8))
-                        .addComponent(lblImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                .addGap(82, 82, 82)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 137, Short.MAX_VALUE)
+                .addComponent(jLabel8)
+                .addGap(80, 80, 80)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
+                .addGap(27, 27, 27)
                 .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21))
         );
@@ -293,8 +266,6 @@ public class menuInicioDuelo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel lblImagen;
-    private javax.swing.JLabel lblImagen2;
     private javax.swing.JPasswordField txtContraseña;
     private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
