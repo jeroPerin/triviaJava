@@ -173,10 +173,13 @@ public class menuCargaUsuarios extends javax.swing.JFrame {
         
         ResultSet rs = c.consultar(sql);
 
+        int idUsuario;
         if(rs.next()){
 
+            idUsuario = rs.getInt("idUsuario");
             JOptionPane.showMessageDialog(null, "Bienvenido " + usuario);
 
+            Global.setIdUsuario(idUsuario);
             menuPrincipal m = new menuPrincipal();
              m.setLocationRelativeTo(null);
             m.setVisible(true);

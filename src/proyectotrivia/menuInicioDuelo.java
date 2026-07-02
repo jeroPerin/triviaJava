@@ -5,7 +5,10 @@
 package proyectotrivia;
 
 import java.awt.Image;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -15,6 +18,9 @@ public class menuInicioDuelo extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(menuInicioDuelo.class.getName());
 
+    private int idJugador2;
+    private boolean chequeado=false;
+    
     /**
      * Creates new form menuInicioDuelo
      */
@@ -50,11 +56,11 @@ public class menuInicioDuelo extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         btnIniciar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        txtNombre = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jPasswordField2 = new javax.swing.JPasswordField();
+        txtContraseña = new javax.swing.JPasswordField();
         jLabel7 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        btnChequearJugador = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -82,15 +88,15 @@ public class menuInicioDuelo extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("USUARIO");
 
-        jPasswordField2.setText("jPasswordField1");
+        txtContraseña.setText("jPasswordField1");
 
         jLabel7.setFont(new java.awt.Font("Cambria", 0, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("CONTRASEÑA");
 
-        jButton2.setFont(new java.awt.Font("Cambria", 0, 18)); // NOI18N
-        jButton2.setText("CHEQUEAR JUGADOR");
-        jButton2.addActionListener(this::jButton2ActionPerformed);
+        btnChequearJugador.setFont(new java.awt.Font("Cambria", 0, 18)); // NOI18N
+        btnChequearJugador.setText("CHEQUEAR JUGADOR");
+        btnChequearJugador.addActionListener(this::btnChequearJugadorActionPerformed);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -102,16 +108,16 @@ public class menuInicioDuelo extends javax.swing.JFrame {
                         .addGap(26, 26, 26)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(104, 104, 104)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(248, 248, 248)
-                        .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(360, 360, 360)
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel7)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 138, Short.MAX_VALUE)
-                .addComponent(jButton2)
+                .addComponent(btnChequearJugador)
                 .addGap(73, 73, 73))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(459, 459, 459)
@@ -128,9 +134,9 @@ public class menuInicioDuelo extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnChequearJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 181, Short.MAX_VALUE)
                 .addComponent(btnIniciar, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(59, 59, 59))
@@ -180,24 +186,54 @@ public class menuInicioDuelo extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnChequearJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChequearJugadorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+        String usuario = txtNombre.getText();
+    String contraseña = txtContraseña.getText();
+
+    Conexion c = new Conexion("localhost", "triviaproyecto", "root", "");
+
+    String sql = "SELECT * FROM usuarios "
+            + "WHERE nombreUsuario = '" + usuario + "' " + "AND contraseña = '" + contraseña + "'";
+
+    try {
+        
+        ResultSet rs = c.consultar(sql);
+
+        if(rs.next()){
+
+            idJugador2 = rs.getInt("idUsuario");
+            JOptionPane.showMessageDialog(null, "Bienvenido " + usuario);
+            chequeado=true;
+
+        }else{
+            JOptionPane.showMessageDialog(null, "Usuario no existente. Por favor, registrese en el menu principal.");
+        }
+
+    } catch (SQLException ex) {
+        ex.printStackTrace();
+    }
+
+    c.cerrarConexion();
+    }//GEN-LAST:event_btnChequearJugadorActionPerformed
 
     private void btnIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarActionPerformed
         // TODO add your handling code here:
-        PartidasMultijugador p = new PartidasMultijugador(1, 0, 2, 0, 1, false);
+        if(chequeado==true){
+        PartidasMultijugador p = new PartidasMultijugador(Global.getIdUsuario(), 0, idJugador2, 0, 0, false);
         p.iniciarPartida();
 
-        menuPregunta m1 = new menuPregunta(p,1);
-        menuPregunta m2 = new menuPregunta(p,2);
+        menuPregunta m1 = new menuPregunta(p,Global.getIdUsuario());
+        menuPregunta m2 = new menuPregunta(p,idJugador2);
         m1.setLocationRelativeTo(null);
         m2.setLocationRelativeTo(null);
 
         m1.setVisible(true);
         m2.setVisible(true);
         dispose();
-
+        }
+        else
+            JOptionPane.showMessageDialog(null, "Primero debe ingresar el Jugador 2.");
     }//GEN-LAST:event_btnIniciarActionPerformed
 
     /**
@@ -226,17 +262,17 @@ public class menuInicioDuelo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnChequearJugador;
     private javax.swing.JButton btnIniciar;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField2;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JLabel lblImagen;
     private javax.swing.JLabel lblImagen2;
+    private javax.swing.JPasswordField txtContraseña;
+    private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 }

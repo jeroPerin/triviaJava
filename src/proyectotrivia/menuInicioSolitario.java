@@ -73,10 +73,10 @@ public class menuInicioSolitario extends javax.swing.JFrame {
 
     private void btnJugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJugarActionPerformed
        
-        PartidasSolitario p = new PartidasSolitario(1,0,1,false);
+        PartidasSolitario p = new PartidasSolitario(Global.getIdUsuario(), 0, 0, false);
         p.iniciarPartida();
             
-        menuPregunta m = new menuPregunta(p,1);
+        menuPregunta m = new menuPregunta(p, Global.getIdUsuario());
         m.setLocationRelativeTo(null);
         m.setVisible(true);
         dispose();

@@ -292,15 +292,15 @@ public class PartidasMultijugador extends Partidas{
     @Override
     public Preguntas siguientePregunta(){
         
-        if(turno==1){
+        if(turno==idUsuario1){
             
             if(indicePregunta1 <=0)
                      return null;  //cuando venga a buscar la pregunta del jugador1 y no haya significa que la partida termino, por eso devuelve null.
             
-            turno=2;
+            turno=idUsuario2;
             return preguntasPartida1[--indicePregunta1];
         }else{
-            turno=1;
+            turno=idUsuario1;
             return preguntasPartida2[--indicePregunta2];
         }
         
