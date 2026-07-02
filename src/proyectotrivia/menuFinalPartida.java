@@ -189,6 +189,7 @@ public class menuFinalPartida extends javax.swing.JFrame {
 
     private void btnVolverMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverMenuActionPerformed
         menuPrincipal m = new menuPrincipal();
+        m.setLocationRelativeTo(null);
         m.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnVolverMenuActionPerformed
